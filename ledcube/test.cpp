@@ -3,7 +3,7 @@
 
 
 TEST(Core, SetBit) {
-    char b = 0;
+    uint8_t b = 0;
     EXPECT_EQ(0, b);
     
     jgLedCube::setBit(b, 0, 1);
@@ -72,6 +72,23 @@ TEST(Core, GetBit) {
     EXPECT_EQ(0, jgLedCube::getBit(17, 6));
     EXPECT_EQ(0, jgLedCube::getBit(17, 7));
 }
+
+//TEST(Core, SetLed) {
+//    jgLedCube::clear();
+//
+//    jgLedCube::setLed(1, 1, 1, 15, 1);
+//
+//    // CHECK ALL 4 MODULATION BITS
+//    uint8_t mod_bit_1 = jgLedCube::getBit(jgLedCube::dataArray[0], 1);
+//    uint8_t mod_bit_2 = jgLedCube::getBit(jgLedCube::dataArray[0], 1);
+//    uint8_t mod_bit_3 = jgLedCube::getBit(jgLedCube::dataArray[0], 1);
+//    uint8_t mod_bit_4 = jgLedCube::getBit(jgLedCube::dataArray[0], 1);
+//
+//    EXPECT_EQ(mod_bit_1, 1);
+//    EXPECT_EQ(mod_bit_2, 1);
+//    EXPECT_EQ(mod_bit_3, 1);
+//    EXPECT_EQ(mod_bit_4, 1);
+//}
 
 
 int main(int argc, char **argv) {
