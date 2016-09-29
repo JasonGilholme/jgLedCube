@@ -32,10 +32,11 @@ namespace jgLedCube {
         static const uint8_t xyzDimension = xyDimension * zDimension;
         static const uint8_t modulationBits = 4;
         static const uint8_t maxIntensity = 15;
-        static const uint8_t nArrayBytes = ceil(xyzDimension / 8.0) * nChannels * modulationBits;
+        static const uint8_t modBlockSize = ceil(xyzDimension / 8.0) * nChannels;
+        static const uint8_t dataArraySize = modBlockSize * modulationBits;
 
         // THE MAIN DATA ARRAY
-        static uint8_t dataArray[nArrayBytes] = {};
+        static uint8_t dataArray[dataArraySize] = {};
 
         // KEY FUNCTIONS FOR SETTING DATA ON THE CUBE
         void setLed(uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b);

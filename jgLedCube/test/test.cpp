@@ -73,22 +73,46 @@ TEST(Core, GetBit) {
     EXPECT_EQ(0, jgLedCube::core::getBit(17, 7));
 }
 
-//TEST(Core, SetLed) {
-//    jgLedCube::core::clear();
-//
-//    jgLedCube::core::setLed(1, 1, 1, 15, 1);
-//
-//    // CHECK ALL 4 MODULATION BITS
-//    uint8_t mod_bit_1 = jgLedCube::core::getBit(jgLedCube::core::dataArray[0], 1);
-//    uint8_t mod_bit_2 = jgLedCube::core::getBit(jgLedCube::core::dataArray[0], 1);
-//    uint8_t mod_bit_3 = jgLedCube::core::getBit(jgLedCube::core::dataArray[0], 1);
-//    uint8_t mod_bit_4 = jgLedCube::core::getBit(jgLedCube::core::dataArray[0], 1);
-//
-//    EXPECT_EQ(mod_bit_1, 1);
-//    EXPECT_EQ(mod_bit_2, 1);
-//    EXPECT_EQ(mod_bit_3, 1);
-//    EXPECT_EQ(mod_bit_4, 1);
-//}
+TEST(Core, SetLed) {
+    jgLedCube::core::clear();
+
+    jgLedCube::core::setLed(1, 1, 1, 15, 15, 15);
+
+    // With the test cube spec being 2x2x2 with 3 channels,
+    // we have a 3 byte modulation block size.
+    uint8_t mod_bit_1_R = jgLedCube::core::getBit(jgLedCube::core::dataArray[0], 0);
+    uint8_t mod_bit_1_G = jgLedCube::core::getBit(jgLedCube::core::dataArray[0], 1);
+    uint8_t mod_bit_1_B = jgLedCube::core::getBit(jgLedCube::core::dataArray[0], 2);
+
+    uint8_t mod_bit_2_R = jgLedCube::core::getBit(jgLedCube::core::dataArray[3], 0);
+    uint8_t mod_bit_2_G = jgLedCube::core::getBit(jgLedCube::core::dataArray[3], 1);
+    uint8_t mod_bit_2_B = jgLedCube::core::getBit(jgLedCube::core::dataArray[3], 2);
+
+    uint8_t mod_bit_3_R = jgLedCube::core::getBit(jgLedCube::core::dataArray[6], 0);
+    uint8_t mod_bit_3_G = jgLedCube::core::getBit(jgLedCube::core::dataArray[6], 1);
+    uint8_t mod_bit_3_B = jgLedCube::core::getBit(jgLedCube::core::dataArray[6], 2);
+
+    uint8_t mod_bit_4_R = jgLedCube::core::getBit(jgLedCube::core::dataArray[9], 0);
+    uint8_t mod_bit_4_G = jgLedCube::core::getBit(jgLedCube::core::dataArray[9], 1);
+    uint8_t mod_bit_4_B = jgLedCube::core::getBit(jgLedCube::core::dataArray[9], 2);
+
+    EXPECT_EQ(mod_bit_1_R, 1);
+    EXPECT_EQ(mod_bit_1_G, 1);
+    EXPECT_EQ(mod_bit_1_B, 1);
+
+    EXPECT_EQ(mod_bit_2_R, 1);
+    EXPECT_EQ(mod_bit_2_G, 1);
+    EXPECT_EQ(mod_bit_2_B, 1);
+
+    EXPECT_EQ(mod_bit_3_R, 1);
+    EXPECT_EQ(mod_bit_3_G, 1);
+    EXPECT_EQ(mod_bit_3_B, 1);
+
+    EXPECT_EQ(mod_bit_4_R, 1);
+    EXPECT_EQ(mod_bit_4_G, 1);
+    EXPECT_EQ(mod_bit_4_B, 1);
+
+}
 
 
 int main(int argc, char **argv) {
