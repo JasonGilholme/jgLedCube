@@ -1,22 +1,14 @@
 /// Core data functions & variables for cube operation.
 
-#ifndef LED_CUBE_X_DIMENSION
-#define LED_CUBE_X_DIMENSION 4
-#endif
-#ifndef LED_CUBE_Y_DIMENSION
-#define LED_CUBE_Y_DIMENSION 4
-#endif
-#ifndef LED_CUBE_Z_DIMENSION
-#define LED_CUBE_Z_DIMENSION 4
-#endif
-#ifndef LED_CUBE_N_CHANNELS
-#define LED_CUBE_N_CHANNELS 1
-#endif
+#ifndef JGLEDCUBE_CORE_H
+#define JGLEDCUBE_CORE_H
 
-#ifndef HELLOWORLD_DATA_H
-#define HELLOWORLD_DATA_H
-
-#include <math.h>
+#define LED_CUBE_XY_DIMENSION LED_CUBE_X_DIMENSION * LED_CUBE_Y_DIMENSION
+#define LED_CUBE_XYZ_DIMENSION LED_CUBE_XY_DIMENSION * LED_CUBE_Y_DIMENSION
+#define LED_CUBE_MODULATION_BITS 4
+#define LED_CUBE_MAX_INTENSITY 15
+#define LED_CUBE_MODULATION_BLOCK_SIZE LED_CUBE_XYZ_DIMENSION / 8.0 * LED_CUBE_N_CHANNELS
+#define LED_CUBE_DATA_ARRAY_SIZE LED_CUBE_MODULATION_BLOCK_SIZE * LED_CUBE_MODULATION_BITS
 
 namespace jgLedCube {
     namespace core {
@@ -28,12 +20,12 @@ namespace jgLedCube {
         static const uint8_t nChannels = LED_CUBE_N_CHANNELS;
 
         // VARS FOR INTERNAL WORKINGS
-        static const uint8_t xyDimension = xDimension * yDimension;
-        static const uint8_t xyzDimension = xyDimension * zDimension;
-        static const uint8_t modulationBits = 4;
-        static const uint8_t maxIntensity = 15;
-        static const uint8_t modBlockSize = ceil(xyzDimension / 8.0) * nChannels;
-        static const uint8_t dataArraySize = modBlockSize * modulationBits;
+        static const uint8_t xyDimension = LED_CUBE_XY_DIMENSION;
+        static const uint8_t xyzDimension = LED_CUBE_XYZ_DIMENSION;
+        static const uint8_t modulationBits = LED_CUBE_MODULATION_BITS;
+        static const uint8_t maxIntensity = LED_CUBE_MAX_INTENSITY;
+        static const uint8_t modBlockSize = LED_CUBE_MODULATION_BLOCK_SIZE;
+        static const uint8_t dataArraySize = LED_CUBE_DATA_ARRAY_SIZE;
 
         // THE MAIN DATA ARRAY
         static uint8_t dataArray[dataArraySize] = {};
@@ -53,4 +45,4 @@ namespace jgLedCube {
     }
 }
 
-#endif //HELLOWORLD_DATA_H
+#endif //JGLEDCUBE_CORE_H

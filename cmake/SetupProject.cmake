@@ -8,9 +8,15 @@ if ( TARGET_HARDWARE STREQUAL ARDUINO )
     set( BUILD_ARDUINO ON )
     set( BUILD_STM32 OFF )
 
+    # USE THE ARDUINO CMAKE SETUP FROM queezythegreat - https://github.com/queezythegreat/arduino-cmake
     set( CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/arduino_toolchain/ArduinoToolchain.cmake )
-    set( ARDUINO_DEFAULT_BOARD atmega328 )      # Default Board ID, when not specified
-    set( ARDUINO_DEFAULT_PORT /dev/ttyACM0 )    # Default Port, when not specified
+
+    if ( NOT DEFINED ARDUINO_DEFAULT_BOARD )
+        set( ARDUINO_DEFAULT_BOARD uno )
+    endif()
+    if ( NOT DEFINED ARDUINO_DEFAULT_BOARD )
+        set( ARDUINO_DEFAULT_PORT /dev/ttyACM0 )
+    endif()
 
 elseif ( TARGET_HARDWARE STREQUAL STM32 )
 
@@ -19,7 +25,34 @@ elseif ( TARGET_HARDWARE STREQUAL STM32 )
     set( BUILD_ARDUINO OFF )
     set( BUILD_STM32 ON )
 
+    # USE THE STM32 CMAKE SETUP FROM ObKo - https://github.com/ObKo/stm32-cmake
+    set( CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/stm32_toolchain/gcc_stm32.cmake )
+    set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake/stm32_toolchain )
+
+    if ( NOT DEFINED STM32_CHIP )
+        message( FATAL_ERROR "STM32_CHIP variable not defined!" )
+        set ( STM32_CHIP STM32F407VG )
+    endif()
+
+    ENABLE_LANGUAGE(ASM)
+
+    FIND_PACKAGE(CMSIS REQUIRED)
+    FIND_PACKAGE(STM32HAL COMPONENTS gpio tim REQUIRED)
+
+    INCLUDE_DIRECTORIES(
+            ${CMSIS_INCLUDE_DIRS}
+            ${STM32HAL_INCLUDE_DIR}
+    )
+
+    SET(STM32_LINKER_SCRIPT ${CMSIS_LINKER_SCRIPT})
+
 else()
+
+    # FORCE CUBE SPECS FOR TESTING PURPOSES
+    set(CUBE_X 2)
+    set(CUBE_Y 2)
+    set(CUBE_Z 2)
+    set(N_CHANNELS 3)
 
     add_definitions( -DPC_BUILD=1 )
     set( BUILD_TESTS ON )
@@ -27,37 +60,5 @@ else()
     set( BUILD_STM32 OFF )
 
 endif()
-
-
-# =========================================================================== #
-# SETS DEFAULT BUILD VALUES FOR UNSUPPLIED VARIABLES
-# =========================================================================== #
-
-if (NOT DEFINED CUBE_X)
-    set(CUBE_X 4)
-endif()
-if (NOT DEFINED CUBE_Y)
-    set(CUBE_Y 4)
-endif()
-if (NOT DEFINED CUBE_Z)
-    set(CUBE_Z 4)
-endif()
-
-if (NOT DEFINED N_CHANNELS)
-    set(N_CHANNELS 1)
-endif()
-
-add_definitions( -DLED_CUBE_X_DIMENSION=${CUBE_X} )
-add_definitions( -DLED_CUBE_Y_DIMENSION=${CUBE_Y} )
-add_definitions( -DLED_CUBE_Z_DIMENSION=${CUBE_Z} )
-add_definitions( -DLED_CUBE_N_CHANNELS=${N_CHANNELS} )
-
-message( STATUS "BUILD_TESTS: ${BUILD_TESTS}")
-message( STATUS "BUILD_ARDUINO: ${BUILD_ARDUINO}")
-message( STATUS "BUILD_STM32: ${BUILD_STM32}")
-message( STATUS "CUBE_X: ${CUBE_X}")
-message( STATUS "CUBE_Y: ${CUBE_Y}")
-message( STATUS "CUBE_Z: ${CUBE_Z}")
-message( STATUS "N_CHANNELS: ${N_CHANNELS}")
 
 

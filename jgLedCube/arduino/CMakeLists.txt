@@ -1,8 +1,8 @@
 
-generate_arduino_firmware(debug
+generate_arduino_firmware(ARDUINO_debug
         SKETCH debug.cpp
         #HDRS
-        #LIBS
+        LIBS jgLedCubeCore #jgLedCubeSerial
         #PORT
         #SERIAL
         PROGRAMMER usbasp

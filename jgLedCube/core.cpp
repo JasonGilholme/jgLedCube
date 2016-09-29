@@ -3,7 +3,8 @@
     #include <string.h>
     #include <stdint.h>
 #elif defined(STM32_BUILD)
-
+    #include <string.h>
+    #include <stdint.h>
 #else
     #include <stdint.h>
     #include <iostream>
