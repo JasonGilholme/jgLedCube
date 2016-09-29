@@ -10,16 +10,15 @@
 #define LED_CUBE_Z_DIMENSION 4
 #endif
 #ifndef LED_CUBE_N_CHANNELS
-#define LED_CUBE_N_CHANNELS 3
+#define LED_CUBE_N_CHANNELS 1
 #endif
 
 #ifndef HELLOWORLD_DATA_H
 #define HELLOWORLD_DATA_H
 
-#include <iostream>
 #include <math.h>
 
-namespace jgLedCube{
+namespace jgLedCube {
     namespace core {
 
         // CUBE CONFIGURATION
@@ -39,20 +38,16 @@ namespace jgLedCube{
         static uint8_t dataArray[nArrayBytes] = {};
 
         // KEY FUNCTIONS FOR SETTING DATA ON THE CUBE
-        void setLed(uint8_t x, uint8_t y, uint8_t z, uint8_t value, uint8_t channel);
-
-        void setLedFloat(float x, float y, float z, uint8_t value, uint8_t channel);
-
+        void setLed(uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b);
+        void setLedFloat(float x, float y, float z, uint8_t r, uint8_t g, uint8_t b);
         void clear();
 
         // GET & SET BITS IN A BYTE
         void setBit(uint8_t &b, const uint8_t &n, const uint8_t &v);
-
         uint8_t getBit(uint8_t b, uint8_t n);
 
         // DEBUG PRINTS
         void printConfig();
-
         void printData();
     }
 }

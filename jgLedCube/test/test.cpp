@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "core.h"
+#include <jgLedCube/core.h>
 
 
 TEST(Core, SetBit) {
