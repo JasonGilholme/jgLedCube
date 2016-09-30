@@ -1,0 +1,810 @@
+/opt/clion-2016.2.2/bin/cmake/bin/cmake --build /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug --target all -- -j 8
+/opt/clion-2016.2.2/bin/cmake/bin/cmake -H/home/jase/code/jgLedCube-embedded -B/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug --check-build-system CMakeFiles/Makefile.cmake 0
+/opt/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_progress_start /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/CMakeFiles /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+/usr/bin/make -f jgLedCube/CMakeFiles/jgLedCubeCore.dir/build.make jgLedCube/CMakeFiles/jgLedCubeCore.dir/depend
+make[2]: Entering directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug && /opt/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_depends "Unix Makefiles" /home/jase/code/jgLedCube-embedded /home/jase/code/jgLedCube-embedded/jgLedCube /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/CMakeFiles/jgLedCubeCore.dir/DependInfo.cmake --color=
+/usr/bin/make -f jgLedCube/arduino/CMakeFiles/uno_CORE.dir/build.make jgLedCube/arduino/CMakeFiles/uno_CORE.dir/depend
+make[2]: Entering directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug && /opt/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_depends "Unix Makefiles" /home/jase/code/jgLedCube-embedded /home/jase/code/jgLedCube-embedded/jgLedCube/arduino /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino/CMakeFiles/uno_CORE.dir/DependInfo.cmake --color=
+Scanning dependencies of target jgLedCubeCore
+Scanning dependencies of target uno_CORE
+make[2]: Leaving directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+/usr/bin/make -f jgLedCube/CMakeFiles/jgLedCubeCore.dir/build.make jgLedCube/CMakeFiles/jgLedCubeCore.dir/build
+make[2]: Entering directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+[  3%] Building CXX object jgLedCube/CMakeFiles/jgLedCubeCore.dir/core.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -DLED_CUBE_NAME=\"MyLedCube\" -DLED_CUBE_N_CHANNELS=3 -DLED_CUBE_UID=0 -DLED_CUBE_VERSION=0 -DLED_CUBE_X_DIMENSION=4 -DLED_CUBE_Y_DIMENSION=4 -DLED_CUBE_Z_DIMENSION=4 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -o CMakeFiles/jgLedCubeCore.dir/core.cpp.obj -c /home/jase/code/jgLedCube-embedded/jgLedCube/core.cpp
+make[2]: Leaving directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+/usr/bin/make -f jgLedCube/arduino/CMakeFiles/uno_CORE.dir/build.make jgLedCube/arduino/CMakeFiles/uno_CORE.dir/build
+make[2]: Entering directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+[ 11%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp.obj
+[ 11%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp
+[ 15%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp
+Using built-in specs.
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp -quiet -dumpbase CDC.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccjtqQHj.s
+[ 19%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp.obj
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp -quiet -dumpbase HID.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccuf9jFj.s
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp
+Using built-in specs.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+Thread model: single
+gcc version 4.8.2 (GCC)
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp.obj' '-c'
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, Using built-in specs.
+GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC=/usr/bin/avr-g++
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp -quiet -dumpbase HardwareSerial.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccKM1O4h.s
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib[ 23%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp
+[ 26%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp.obj
+GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+ avr5GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+[ 30%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp.obj
+Using built-in specs.
+Compiler executable checksum: ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ -Dignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp -quiet -dumpbase Print.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccTr6mLh.s
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, ffGMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+e6193274GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+8e3640c16bc6940cfeignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+ ARDUINO_BUILD=1#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, edGMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ac
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+Using built-in specs.
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp -quiet -dumpbase Stream.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp.obj -g -g -OsCOLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+Compiler executable checksum: ffe61932748e3640c16bc694COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp.obj' '-c'
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2,  /usr/lib/gcc/avr/4.8.2/cc1plus -D -quiet -v -version -I F_CPU=16000000L /home/jase/code/jgLedCube-embedded -D -I ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino -ffunction-sections -I /usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp /usr/share/arduino/libraries -quiet -fdata-sections -dumpbase -fno-exceptions -I -fno-rtti IPAddress.cpp /usr/share/arduino/hardware/arduino/variants/standard -mcall-prologues -imultilib -fno-enforce-eh-specs avr5 -fno-exceptions -mmcu=atmega328p -auxbase-strip -o /tmp/ccs7XuOi.s CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp.obj
+ -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccYO3TYh.s
+0c -Dfeedac ARDUINO_BUILD=1
+ -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp -quiet -dumpbase Tone.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/cc8nL2Mi.s
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+#include "..." search starts here:
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/share/arduino/libraries
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+ /usr/lib/gcc/avr/4.8.2/include
+End of search list.
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: ffe61932Compiler executable checksum: 748e3640c16bffe6c6940c1932feedac748e
+3640c16bc6940cfeedac
+Compiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp.obj /tmp/ccjtqQHj.s
+[ 34%] Linking CXX static library libjgLedCubeCore.a
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp.obj' '-c'
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube && /opt/clion-2016.2.2/bin/cmake/bin/cmake -P CMakeFiles/jgLedCubeCore.dir/cmake_clean_target.cmake
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp.obj /tmp/ccuf9jFj.s
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube && /opt/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/jgLedCubeCore.dir/link.txt --verbose=1
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp.obj' '-c'
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp.obj' '-c'
+[ 38%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp.obj
+/usr/bin/avr-ar qc libjgLedCubeCore.a  CMakeFiles/jgLedCubeCore.dir/core.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp
+[ 42%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp.obj
+/usr/bin/avr-ranlib libjgLedCubeCore.a
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp -quiet -dumpbase USBCore.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccjQZQMk.s
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp -quiet -dumpbase WMath.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/cc4gztJk.s
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+make[2]: Leaving directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+[ 42%] Built target jgLedCubeCore
+Compiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+Compiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+[ 46%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp -quiet -dumpbase WString.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccGOMKRo.s
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp.obj /tmp/ccYO3TYh.s
+Compiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp.obj /tmp/cc4gztJk.s
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp.obj' '-c'
+[ 50%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/main.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/main.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/main.cpp
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp.obj' '-c'
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp.obj /tmp/ccjQZQMk.s
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/main.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/main.cpp -quiet -dumpbase main.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/main.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccDp2ltq.s
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp.obj' '-c'
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+[ 53%] Building CXX object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/new.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/new.cpp.obj -c /usr/share/arduino/hardware/arduino/cores/arduino/new.cpp
+[ 57%] Building C object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-gcc  -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -g           -mcall-prologues -ffunction-sections -fdata-sections   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c.obj   -c /usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp.obj /tmp/cc8nL2Mi.s
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/new.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/new.cpp -quiet -dumpbase new.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/new.cpp.objCompiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+ -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/ccVnEa6q.s
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1 -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c -quiet -dumpbase WInterrupts.c -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c.obj -g -g -Os -version -ffunction-sections -fdata-sections -o /tmp/cc6dRaer.s
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp.obj' '-c'
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+[ 61%] Building C object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-gcc  -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -g           -mcall-prologues -ffunction-sections -fdata-sections   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c.obj   -c /usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c
+Compiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+Compiler executable checksum: 8e3cc840c82408aea3cf73bdb00a046d
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1 -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c -quiet -dumpbase malloc.c -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c.obj -g -g -Os -version -ffunction-sections -fdata-sections -o /tmp/cckxFrPp.s
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp.obj /tmp/ccs7XuOi.s
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/new.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/new.cpp.obj /tmp/ccVnEa6q.s
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 8e3cc840c82408aea3cf73bdb00a046d
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp.obj' '-c'
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/new.cpp.obj' '-c'
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/main.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/main.cpp.obj /tmp/ccDp2ltq.s
+[ 65%] Building C object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-gcc  -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -g           -mcall-prologues -ffunction-sections -fdata-sections   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c.obj   -c /usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1 -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c -quiet -dumpbase realloc.c -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c.obj -g -g -Os -version -ffunction-sections -fdata-sections -o /tmp/ccWxWSit.s
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/main.cpp.obj' '-c'
+Compiler executable checksum: 8e3cc840c82408aea3cf73bdb00a046d
+[ 69%] Building C object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-gcc  -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -g           -mcall-prologues -ffunction-sections -fdata-sections   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c.obj   -c /usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c
+[ 73%] Building C object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring.c.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-gcc  -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -g           -mcall-prologues -ffunction-sections -fdata-sections   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring.c.obj   -c /usr/share/arduino/hardware/arduino/cores/arduino/wiring.c
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c.obj /tmp/cc6dRaer.s
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1 -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c -quiet -dumpbase wiring_analog.c -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c.obj -g -g -Os -version -ffunction-sectionsUsing built-in specs.
+ -fdata-sections -o /tmp/ccv07LDr.s
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1 -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/wiring.c -quiet -dumpbase wiring.c -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring.c.obj -g -g -Os -version -ffunction-sections -fdata-sections -o /tmp/ccSoI7Ar.s
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+Compiler executable checksum: 8e3cc840c82408aea3cf73bdb00a046d
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c.obj' '-c'
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp.obj /tmp/ccKM1O4h.s
+[ 76%] Building C object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-gcc  -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -g           -mcall-prologues -ffunction-sections -fdata-sections   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c.obj   -c /usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp.obj /tmp/ccTr6mLh.s
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 8e3cc840c82408aea3cf73bdb00a046d
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp.obj' '-c'
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1 -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c -quiet -dumpbase wiring_digital.c -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c.obj -g -g -Os -version -ffunction-sections -fdata-sections -o /tmp/ccKrgsev.s
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c.obj /tmp/cckxFrPp.s
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp.obj' '-c'
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c.obj /tmp/ccWxWSit.s
+[ 80%] Building C object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-gcc  -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -g           -mcall-prologues -ffunction-sections -fdata-sections   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c.obj   -c /usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c
+[ 84%] Building C object jgLedCube/arduino/CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c.obj
+Compiler executable checksum: 8e3cc840c82408aea3cf73bdb00a046d
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-gcc  -DARDUINO_BUILD=1 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -g           -mcall-prologues -ffunction-sections -fdata-sections   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard" -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c.obj   -c /usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1 -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c -quiet -dumpbase wiring_pulse.c -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c.obj -g -g -Os -version -ffunction-sections -fdata-sections -o /tmp/ccDo3MSv.s
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c.obj' '-c'
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c.obj' '-c'
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-gcc
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1 -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -imultilib avr5 -D ARDUINO_BUILD=1 -D F_CPU=16000000L -D ARDUINO=100 /usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c -quiet -dumpbase wiring_shift.c -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c.obj -g -g -Os -version -ffunction-sections -fdata-sections -o /tmp/cc8gVpqu.s
+Compiler executable checksum: 8e3cc840c82408aea3cf73bdb00a046d
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 8e3cc840c82408aea3cf73bdb00a046d
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c.obj /tmp/ccv07LDr.s
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c.obj' '-c'
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring.c.obj /tmp/ccSoI7Ar.s
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring.c.obj' '-c'
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c.obj /tmp/cc8gVpqu.s
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c.obj /tmp/ccDo3MSv.s
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c.obj' '-c'
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c.obj' '-c'
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c.obj /tmp/ccKrgsev.s
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c.obj' '-c'
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp.obj /tmp/ccGOMKRo.s
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-o' 'CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp.obj' '-c'
+[ 88%] Linking CXX static library libuno_CORE.a
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /opt/clion-2016.2.2/bin/cmake/bin/cmake -P CMakeFiles/uno_CORE.dir/cmake_clean_target.cmake
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /opt/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/uno_CORE.dir/link.txt --verbose=1
+/usr/bin/avr-ar qc libuno_CORE.a  CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/CDC.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HID.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/IPAddress.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Print.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Stream.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/Tone.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/USBCore.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WMath.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WString.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/main.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/new.cpp.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/WInterrupts.c.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/malloc.c.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/avr-libc/realloc.c.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring.c.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_analog.c.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_digital.c.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_pulse.c.obj CMakeFiles/uno_CORE.dir/usr/share/arduino/hardware/arduino/cores/arduino/wiring_shift.c.obj
+/usr/bin/avr-ranlib libuno_CORE.a
+make[2]: Leaving directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+[ 88%] Built target uno_CORE
+/usr/bin/make -f jgLedCube/arduino/CMakeFiles/ARDUINO_debug.dir/build.make jgLedCube/arduino/CMakeFiles/ARDUINO_debug.dir/depend
+make[2]: Entering directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+[ 92%] Regnerating debug.cpp Sketch
+/opt/clion-2016.2.2/bin/cmake/bin/cmake /home/jase/code/jgLedCube-embedded
+-- BUILD_TESTS: OFF
+-- BUILD_ARDUINO: ON
+-- BUILD_STM32: OFF
+-- CUBE_X:
+-- CUBE_Y:
+-- CUBE_Z:
+-- N_CHANNELS:
+-- Generating ARDUINO_debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug && /opt/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_depends "Unix Makefiles" /home/jase/code/jgLedCube-embedded /home/jase/code/jgLedCube-embedded/jgLedCube/arduino /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino/CMakeFiles/ARDUINO_debug.dir/DependInfo.cmake --color=
+Scanning dependencies of target ARDUINO_debug
+make[2]: Leaving directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+/usr/bin/make -f jgLedCube/arduino/CMakeFiles/ARDUINO_debug.dir/build.make jgLedCube/arduino/CMakeFiles/ARDUINO_debug.dir/build
+make[2]: Entering directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+[ 96%] Building CXX object jgLedCube/arduino/CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /usr/bin/avr-g++   -DARDUINO_BUILD=1 -DLED_CUBE_NAME=\"MyLedCube\" -DLED_CUBE_N_CHANNELS=3 -DLED_CUBE_UID=0 -DLED_CUBE_VERSION=0 -DLED_CUBE_X_DIMENSION=4 -DLED_CUBE_Y_DIMENSION=4 -DLED_CUBE_Z_DIMENSION=4 -I/home/jase/code/jgLedCube-embedded  -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions   -DF_CPU=16000000L -DARDUINO=100 -mmcu=atmega328p -v -I"/usr/share/arduino/hardware/arduino/cores/arduino" -I"/usr/share/arduino/libraries" -I"/usr/share/arduino/hardware/arduino/variants/standard"  -I"/home/jase/code/jgLedCube-embedded/jgLedCube/arduino" -o CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj -c /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino/ARDUINO_debug_debug.cpp.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-D' 'LED_CUBE_NAME="MyLedCube"' '-D' 'LED_CUBE_N_CHANNELS=3' '-D' 'LED_CUBE_UID=0' '-D' 'LED_CUBE_VERSION=0' '-D' 'LED_CUBE_X_DIMENSION=4' '-D' 'LED_CUBE_Y_DIMENSION=4' '-D' 'LED_CUBE_Z_DIMENSION=4' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-I' '/home/jase/code/jgLedCube-embedded/jgLedCube/arduino' '-o' 'CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/cc1plus -quiet -v -I /home/jase/code/jgLedCube-embedded -I /usr/share/arduino/hardware/arduino/cores/arduino -I /usr/share/arduino/libraries -I /usr/share/arduino/hardware/arduino/variants/standard -I /home/jase/code/jgLedCube-embedded/jgLedCube/arduino -imultilib avr5 -D ARDUINO_BUILD=1 -D LED_CUBE_NAME="MyLedCube" -D LED_CUBE_N_CHANNELS=3 -D LED_CUBE_UID=0 -D LED_CUBE_VERSION=0 -D LED_CUBE_X_DIMENSION=4 -D LED_CUBE_Y_DIMENSION=4 -D LED_CUBE_Z_DIMENSION=4 -D F_CPU=16000000L -D ARDUINO=100 /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino/ARDUINO_debug_debug.cpp.cpp -quiet -dumpbase ARDUINO_debug_debug.cpp.cpp -mcall-prologues -mmcu=atmega328p -auxbase-strip CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj -g -g -Os -version -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-enforce-eh-specs -fno-exceptions -o /tmp/cc6KyWcJ.s
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/avr/avr5"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/include/c++/4.8.2/backward"
+ignoring nonexistent directory "/usr/lib/gcc/avr/4.8.2/../../../avr/sys-include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jase/code/jgLedCube-embedded
+ /usr/share/arduino/hardware/arduino/cores/arduino
+ /usr/share/arduino/libraries
+ /usr/share/arduino/hardware/arduino/variants/standard
+ /home/jase/code/jgLedCube-embedded/jgLedCube/arduino
+ /usr/lib/gcc/avr/4.8.2/include
+ /usr/lib/gcc/avr/4.8.2/include-fixed
+ /usr/lib/gcc/avr/4.8.2/../../../avr/include
+End of search list.
+GNU C++ (GCC) version 4.8.2 (avr)
+	compiled by GNU C version 4.8.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: ffe61932748e3640c16bc6940cfeedac
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-D' 'LED_CUBE_NAME="MyLedCube"' '-D' 'LED_CUBE_N_CHANNELS=3' '-D' 'LED_CUBE_UID=0' '-D' 'LED_CUBE_VERSION=0' '-D' 'LED_CUBE_X_DIMENSION=4' '-D' 'LED_CUBE_Y_DIMENSION=4' '-D' 'LED_CUBE_Z_DIMENSION=4' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-I' '/home/jase/code/jgLedCube-embedded/jgLedCube/arduino' '-o' 'CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj' '-c'
+ /usr/lib/gcc/avr/4.8.2/../../../avr/bin/as -mmcu=avr5 -mno-skip-bug -o CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj /tmp/cc6KyWcJ.s
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-D' 'ARDUINO_BUILD=1' '-D' 'LED_CUBE_NAME="MyLedCube"' '-D' 'LED_CUBE_N_CHANNELS=3' '-D' 'LED_CUBE_UID=0' '-D' 'LED_CUBE_VERSION=0' '-D' 'LED_CUBE_X_DIMENSION=4' '-D' 'LED_CUBE_Y_DIMENSION=4' '-D' 'LED_CUBE_Z_DIMENSION=4' '-I' '/home/jase/code/jgLedCube-embedded' '-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-D' 'F_CPU=16000000L' '-D' 'ARDUINO=100' '-mmcu=atmega328p' '-v' '-I' '/usr/share/arduino/hardware/arduino/cores/arduino' '-I' '/usr/share/arduino/libraries' '-I' '/usr/share/arduino/hardware/arduino/variants/standard' '-I' '/home/jase/code/jgLedCube-embedded/jgLedCube/arduino' '-o' 'CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj' '-c'
+[100%] Linking CXX executable ARDUINO_debug.elf
+cd /home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug/jgLedCube/arduino && /opt/clion-2016.2.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/ARDUINO_debug.dir/link.txt --verbose=1
+/usr/bin/avr-g++   -g -Os       -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions -g           -mcall-prologues -ffunction-sections -fdata-sections -fno-exceptions  -Wl,--gc-sections -Wl,--gc-sections -mmcu=atmega328p -v  CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj  -o ARDUINO_debug.elf  libuno_CORE.a ../libjgLedCubeCore.a -lc
+Using built-in specs.
+COLLECT_GCC=/usr/bin/avr-g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/4.8.2/lto-wrapper
+Target: avr
+Configured with: ../src/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr
+Thread model: single
+gcc version 4.8.2 (GCC)
+COMPILER_PATH=/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/4.8.2/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/4.8.2/avr5/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/:/usr/lib/gcc/avr/4.8.2/:/usr/lib/gcc/avr/4.8.2/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-g' '-Os' '-g' '-mcall-prologues' '-ffunction-sections' '-fdata-sections' '-fno-exceptions' '-mmcu=atmega328p' '-v' '-o' 'ARDUINO_debug.elf'
+ /usr/lib/gcc/avr/4.8.2/collect2 -m avr5 -Tdata 0x800100 -o ARDUINO_debug.elf /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm328p.o -L/usr/lib/gcc/avr/4.8.2/avr5 -L/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5 -L/usr/lib/gcc/avr/4.8.2 -L/usr/lib/gcc/avr/4.8.2/../../../avr/lib --gc-sections --gc-sections CMakeFiles/ARDUINO_debug.dir/ARDUINO_debug_debug.cpp.cpp.obj libuno_CORE.a ../libjgLedCubeCore.a -lgcc -lm -lc --start-group -lgcc -lm -lc --end-group
+../libjgLedCubeCore.a(core.cpp.obj): In function `jgLedCube::core::setLed(unsigned char, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char)':
+/home/jase/code/jgLedCube-embedded/jgLedCube/core.cpp:65: undefined reference to `__mulhi3'
+collect2: error: ld returned 1 exit status
+make[2]: *** [jgLedCube/arduino/ARDUINO_debug.elf] Error 1
+make[2]: Leaving directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+make[1]: *** [jgLedCube/arduino/CMakeFiles/ARDUINO_debug.dir/all] Error 2
+make[1]: Leaving directory `/home/jase/.CLion2016.2/system/cmake/generated/jgLedCube-embedded-f8b66a31/f8b66a31/Debug'
+make: *** [all] Error 2
