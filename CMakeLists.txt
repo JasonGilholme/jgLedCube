@@ -8,12 +8,12 @@ set( CUBE_VERSION 0 )
 set( CUBE_SIZE_X 4)
 set( CUBE_SIZE_Y 4)
 set( CUBE_SIZE_Z 4)
-set( CUBE_N_COLOURS 1)
+set( CUBE_N_COLOURS 3)
 
 add_subdirectory(jgLedCube)
 
 if ( ${BUILD_TESTS} )
-    add_subdirectory( jgLedCube/test )
+    add_subdirectory(jgLedCube/pc)
 endif()
 
 if ( ${BUILD_ARDUINO} )
