@@ -9,5 +9,5 @@ void setup(){
 }
 
 void loop(){
-
+    jgLedCube::core::setLed(1, 1, 1, 15, 15, 15);
 }
