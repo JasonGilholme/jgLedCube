@@ -4,12 +4,12 @@
 # include <stm32f2xx.h>
 #elif defined STM32F4
 # include <stm32f4xx.h>
+# include "stm32f4xx_hal.h"
 #endif
 
 #include <jgLedCube/core.h>
 
 int main(void)
 {
-    for (;;);
-    return 0;
+//    jgLedCube::core::setLed(1, 1, 1, 15, 15, 15);
 }

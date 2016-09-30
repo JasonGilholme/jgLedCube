@@ -1,5 +1,34 @@
 
-add_library(jgLedCubeCore core.cpp)
+if ( ${BUILD_TESTS} )
+    add_library(jgLedCubeCore core.cpp)
+#    add_library(jgLedCubeSerial serial.cpp serial_test.cpp)
+
+    add_subdirectory( pc )
+endif()
+
+if ( ${BUILD_ARDUINO} )
+    generate_arduino_library(jgLedCubeCore
+            BOARD ${ARDUINO_DEFAULT_BOARD}
+            SRCS  core.cpp)
+#    generate_arduino_library(jgLedCubeSerial
+#            BOARD ${ARDUINO_DEFAULT_BOARD}
+#            SRCS  serial.cpp serial_arduino.cpp)
+
+    add_subdirectory( arduino )
+endif()
+
+if ( ${BUILD_STM32} )
+    add_library(jgLedCubeCore core.cpp)
+    STM32_SET_TARGET_PROPERTIES(jgLedCubeCore)
+    STM32_ADD_HEX_BIN_TARGETS(jgLedCubeCore)
+
+#    add_library(jgLedCubeSerial serial.cpp serial_stm32.cpp)
+#    STM32_SET_TARGET_PROPERTIES(jgLedCubeSerial)
+#    STM32_ADD_HEX_BIN_TARGETS(jgLedCubeSerial)
+
+    add_subdirectory( stm32 )
+endif()
+
 target_compile_definitions(jgLedCubeCore
         PUBLIC
         LED_CUBE_X_DIMENSION=${CUBE_SIZE_X}
@@ -10,25 +39,3 @@ target_compile_definitions(jgLedCubeCore
         LED_CUBE_UID=0  # TODO: Generate unique number per build
         LED_CUBE_VERSION=${CUBE_VERSION}
         )
-
-message( STATUS "BUILD_TESTS: ${BUILD_TESTS}")
-message( STATUS "BUILD_ARDUINO: ${BUILD_ARDUINO}")
-message( STATUS "BUILD_STM32: ${BUILD_STM32}")
-message( STATUS "CUBE_X: ${CUBE_X}")
-message( STATUS "CUBE_Y: ${CUBE_Y}")
-message( STATUS "CUBE_Z: ${CUBE_Z}")
-message( STATUS "N_CHANNELS: ${N_CHANNELS}")
-
-
-#if ( ${BUILD_TESTS} )
-#    add_library(jgLedCubeSerial serial.cpp serial_test.cpp)
-#endif()
-#
-#if ( ${BUILD_ARDUINO} )
-#    add_library(jgLedCubeSerial serial.cpp serial_arduino.cpp)
-#endif()
-#
-#if ( ${BUILD_STM32} )
-#    add_library(jgLedCubeSerial serial.cpp serial_stm32.cpp)
-#endif()
-
