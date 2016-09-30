@@ -1,12 +1,11 @@
 
+#include <stdint.h>
+
 #if defined(ARDUINO_BUILD)
     #include <string.h>
-    #include <stdint.h>
 #elif defined(STM32_BUILD)
     #include <string.h>
-    #include <stdint.h>
 #else
-    #include <stdint.h>
     #include <iostream>
     #include <cstring>
 #endif
@@ -44,7 +43,7 @@ namespace jgLedCube {
              *
              * */
             uint8_t led_id = ((z - 1) * xyDimension) + (((y - 1) * xDimension)) + x - 1;
-            uint8_t byte_id = (led_id / 8); // * channel;
+            uint8_t byte_id = (led_id / 8);
             uint8_t bit_id = led_id % 8;
 
             // SET THE 4 MODULATION BITS
@@ -96,13 +95,15 @@ namespace jgLedCube {
         }
 
         void printConfig() {
-            std::cout << "X_DIMENSION: " << (int) xDimension << std::endl;
-            std::cout << "Y_DIMENSION: " << (int) yDimension << std::endl;
-            std::cout << "Z_DIMENSION: " << (int) zDimension << std::endl;
-            std::cout << "N_CHANNELS: " << (int) nChannels << std::endl;
-            std::cout << "_MODULATION_BITS: " << (int) modulationBits << std::endl;
-            std::cout << "_MAX_INTENSITY: " << (int) maxIntensity << std::endl;
-            std::cout << "_N_ARRAY_BYTES: " << (int) dataArraySize << std::endl;
+            std::cout << "CUBE_NAME: "              << LED_CUBE_NAME              << std::endl;
+            std::cout << "CUBE_UID: "               << LED_CUBE_UID              << std::endl;
+            std::cout << "CUBE_VERSION: "           << LED_CUBE_VERSION                 << std::endl;
+            std::cout << "X_DIMENSION: "            << LED_CUBE_X_DIMENSION             << std::endl;
+            std::cout << "Y_DIMENSION: "            << LED_CUBE_Y_DIMENSION             << std::endl;
+            std::cout << "Z_DIMENSION: "            << LED_CUBE_Z_DIMENSION             << std::endl;
+            std::cout << "N_CHANNELS: "             << LED_CUBE_N_CHANNELS              << std::endl;
+            std::cout << "MODULATION_BLOCK_SIZE: "  << LED_CUBE_MODULATION_BLOCK_SIZE   << std::endl;
+            std::cout << "DATA_ARRAY_SIZE: "        << LED_CUBE_DATA_ARRAY_SIZE         << std::endl;
         }
 #endif
     }

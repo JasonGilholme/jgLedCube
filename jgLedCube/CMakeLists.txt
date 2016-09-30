@@ -1,30 +1,15 @@
-# =========================================================================== #
-# SETS DEFAULT BUILD VALUES FOR UNSUPPLIED VARIABLES
-# =========================================================================== #
-
-if (NOT DEFINED CUBE_X)
-    set(CUBE_X 4)
-endif()
-if (NOT DEFINED CUBE_Y)
-    set(CUBE_Y 4)
-endif()
-if (NOT DEFINED CUBE_Z)
-    set(CUBE_Z 4)
-endif()
-if (NOT DEFINED N_CHANNELS)
-    set(N_CHANNELS 1)
-endif()
-
 
 add_library(jgLedCubeCore core.cpp)
 target_compile_definitions(jgLedCubeCore
         PUBLIC
-        LED_CUBE_X_DIMENSION=${CUBE_X}
-        LED_CUBE_Y_DIMENSION=${CUBE_Y}
-        LED_CUBE_Z_DIMENSION=${CUBE_Z}
+        LED_CUBE_X_DIMENSION=${CUBE_SIZE_X}
+        LED_CUBE_Y_DIMENSION=${CUBE_SIZE_Y}
+        LED_CUBE_Z_DIMENSION=${CUBE_SIZE_Z}
         LED_CUBE_N_CHANNELS=${N_CHANNELS}
+        LED_CUBE_NAME="${CUBE_NAME}"
+        LED_CUBE_UID=0  # TODO: Generate unique number per build
+        LED_CUBE_VERSION=${CUBE_VERSION}
         )
-
 
 message( STATUS "BUILD_TESTS: ${BUILD_TESTS}")
 message( STATUS "BUILD_ARDUINO: ${BUILD_ARDUINO}")

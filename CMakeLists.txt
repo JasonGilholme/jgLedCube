@@ -2,6 +2,14 @@ cmake_minimum_required(VERSION 3.6)
 include(cmake/SetupProject.cmake)
 project(jgLedCube)
 
+# cmake options here?
+set( CUBE_NAME "MyLedCube" )
+set( CUBE_VERSION 0 )
+set( CUBE_SIZE_X 4)
+set( CUBE_SIZE_Y 4)
+set( CUBE_SIZE_Z 4)
+set( CUBE_N_COLOURS 1)
+
 add_subdirectory(jgLedCube)
 
 if ( ${BUILD_TESTS} )
