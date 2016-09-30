@@ -5,7 +5,7 @@ target_compile_definitions(jgLedCubeCore
         LED_CUBE_X_DIMENSION=${CUBE_SIZE_X}
         LED_CUBE_Y_DIMENSION=${CUBE_SIZE_Y}
         LED_CUBE_Z_DIMENSION=${CUBE_SIZE_Z}
-        LED_CUBE_N_CHANNELS=${N_CHANNELS}
+        LED_CUBE_N_CHANNELS=${CUBE_N_COLOURS}
         LED_CUBE_NAME="${CUBE_NAME}"
         LED_CUBE_UID=0  # TODO: Generate unique number per build
         LED_CUBE_VERSION=${CUBE_VERSION}
