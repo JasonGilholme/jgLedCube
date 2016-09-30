@@ -4,8 +4,7 @@
 
 TEST(Core, SetBit) {
     uint8_t b = 0;
-    EXPECT_EQ(0, b);
-    
+
     jgLedCube::core::setBit(b, 0, 1);
     EXPECT_EQ(0x1, b);
     
@@ -73,80 +72,85 @@ TEST(Core, GetBit) {
     EXPECT_EQ(0, jgLedCube::core::getBit(17, 7));
 }
 
-TEST(Core, SetLed) {
+TEST(Core, Clear) {
+    // Flood the array
+    for (uint8_t z=1; z <= LED_CUBE_Z_DIMENSION; z++){
+        for (uint8_t y=1; y <= LED_CUBE_Y_DIMENSION; y++){
+            for (uint8_t x=1; x <= LED_CUBE_X_DIMENSION; x++){
+                jgLedCube::core::setLed(x, y, z, 15, 15, 15);
+            }
+        }
+    }
 
-//    std::cout << &jgLedCube::core::dataArray << std::endl;
+    // Make sure they're all 1
+    for (uint16_t i = 0; i < LED_CUBE_DATA_ARRAY_SIZE; i++){
+        for (uint8_t j=0; j < 8; j++){
+            uint8_t array_bit = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], j);
+            EXPECT_EQ(array_bit, 1);
+        }
+    }
 
+    // Clear it
+    jgLedCube::core::clear();
 
-    std::cout << &jgLedCube::core::dataArray << std::endl;
-
-    jgLedCube::core::printData();
-
-//    jgLedCube::core::clear();
-//
-//    jgLedCube::core::setLed(1, 1, 1, 15, 15, 15);
-//
-//    // With the test cube spec being 4x4x4 with 3 channels,
-//    // we have a 24 byte modulation block size.
-//    int modBlockSize = 24;
-//    int i = 0;
-//
-//    uint8_t zero = 0;
-//    uint8_t one = 1;
-//    uint8_t two = 2;
-//
-//
-//    std::cout << &jgLedCube::core::dataArray << std::endl;
-//
-//    uint8_t b = jgLedCube::core::dataArray[i];
-//
-//    uint8_t mod_bit_1_R = jgLedCube::core::getBit(b, zero);
-//    uint8_t mod_bit_1_G = jgLedCube::core::getBit(b, one);
-//    uint8_t mod_bit_1_B = jgLedCube::core::getBit(b, two);
-
-//    i += modBlockSize;
-//
-//    uint8_t mod_bit_2_R = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 0);
-//    uint8_t mod_bit_2_G = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 1);
-//    uint8_t mod_bit_2_B = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 2);
-//
-//    i += modBlockSize;
-//
-//    uint8_t mod_bit_3_R = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 0);
-//    uint8_t mod_bit_3_G = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 1);
-//    uint8_t mod_bit_3_B = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 2);
-//
-//    i += modBlockSize;
-//
-//    uint8_t mod_bit_4_R = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 0);
-//    uint8_t mod_bit_4_G = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 1);
-//    uint8_t mod_bit_4_B = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], 2);
-
-//    jgLedCube::core::printData();
-//
-//    EXPECT_EQ(mod_bit_1_R, 1);
-//    EXPECT_EQ(mod_bit_1_G, 1);
-//    EXPECT_EQ(mod_bit_1_B, 1);
-
-//    EXPECT_EQ(mod_bit_2_R, 1);
-//    EXPECT_EQ(mod_bit_2_G, 1);
-//    EXPECT_EQ(mod_bit_2_B, 1);
-//
-//    EXPECT_EQ(mod_bit_3_R, 1);
-//    EXPECT_EQ(mod_bit_3_G, 1);
-//    EXPECT_EQ(mod_bit_3_B, 1);
-//
-//    EXPECT_EQ(mod_bit_4_R, 1);
-//    EXPECT_EQ(mod_bit_4_G, 1);
-//    EXPECT_EQ(mod_bit_4_B, 1);
-
+    // Make sure they're all 0
+    for (uint16_t i = 0; i < LED_CUBE_DATA_ARRAY_SIZE; i++){
+        for (uint8_t j=0; j < 8; j++){
+            uint8_t array_bit = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], j);
+            EXPECT_EQ(array_bit, 0);
+        }
+    }
 }
 
+TEST(Core, SetLed) {
+    jgLedCube::core::clear();
+
+    // With these co-ords, the first 3 bits of the first byte in each modulation
+    // block should be 1, the rest should be zero.
+    jgLedCube::core::setLed(1, 1, 1, 15, 15, 15);
+    for (uint16_t i = 0; i < LED_CUBE_DATA_ARRAY_SIZE; i += LED_CUBE_MODULATION_BLOCK_SIZE){
+        for (uint8_t j=0; j < 8; j++){
+            uint8_t array_bit = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], j);
+            EXPECT_EQ(array_bit, j < 3 ? 1 : 0);
+        }
+    }
+}
+
+TEST(Core, Modulation) {
+    // TEST THAT THE RIGHT MODULATION BITS ARE BEING SET
+    jgLedCube::core::clear();
+
+    // With these co-ords, the first three bytes of each modulation bit should look like this.
+    // mod_block  1, 2, 3, 4
+    // r = 2  -> [0, 1, 0, 0]  bit 1 in first byte
+    // g = 4  -> [0, 0, 1, 0]  bit 2 in first byte
+    // b = 8  -> [0, 0, 0, 1]  bit 3 in first byte
+    jgLedCube::core::setLed(1, 1, 1, 2, 4, 8);
+
+    for (uint16_t i = 0; i < LED_CUBE_DATA_ARRAY_SIZE; i++){
+        for (uint8_t j=0; j < 8; j++) {
+            uint8_t array_bit = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], j);
+
+            switch (i) {
+                case LED_CUBE_MODULATION_BLOCK_SIZE:
+                    EXPECT_EQ(array_bit, j == 0 ? 1 : 0);
+                    break;
+                case LED_CUBE_MODULATION_BLOCK_SIZE * 2:
+                    EXPECT_EQ(array_bit, j == 1 ? 1 : 0);
+                    break;
+                case LED_CUBE_MODULATION_BLOCK_SIZE * 3:
+                    EXPECT_EQ(array_bit, j == 2 ? 1 : 0);
+                    break;
+                default :
+                    EXPECT_EQ(array_bit, 0);
+            }
+        }
+    }
+}
 
 int main(int argc, char **argv) {
     jgLedCube::core::printConfig();
+
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
-
-
 }
