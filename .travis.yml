@@ -3,12 +3,16 @@ language: cpp
 sudo: required
 dist: trusty
 
+install:
+   - sudo apt-get install libgtest-dev
+
 compiler:
 - gcc
 
 os:
 - linux
 
-before_script: cmake -DTARGET_HARDWARE=PC
+before_script:
+ - cmake -DTARGET_HARDWARE=PC
 
 script: make
