@@ -8,12 +8,14 @@ sudo: required
 dist: trusty
 
 before_install:
- # GOOGLE TEST
+ # PC Testint Dependencies ===============================================================================
  - sudo apt-get -qq update
  - sudo apt-get install -y libgtest-dev
  - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
- # AVR GCC
+ # AVR Dependencies ======================================================================================
  - sudo apt-get install -qq gcc-avr binutils-avr avr-libc
+ - sudo apt-get install arduino arduino-core
+ - export PATH=$PATH:/usr/bin:/usr/local/bin  # Really??
 
 compiler:
 - gcc
