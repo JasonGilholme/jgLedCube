@@ -1,18 +1,18 @@
-/// Debug blink to test on Arduino hardware
+/// Run all animations through a bunch of cycles to ensure we don't get any runtime errors.
 
-#include <Arduino.h>
+#include <gtest/gtest.h>
+
 #include <jgLedCube/core.h>
 #include <jgLedCube/anim/debug.h>
 
-void setup(){}
 
-void loop(){
+TEST(Anim, Debug) {
+    bool done = false;
+
     jgLedCube::core::clear();
     jgLedCube::anim::debug_blink::reset();
 
-    bool done = false;
     while (!done){
         done = jgLedCube::anim::debug_blink::pump();
     }
-
 }

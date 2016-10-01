@@ -1,10 +1,26 @@
 
+# DEFINE ALL THE ARGS FOR THE PRE PROCESSOR
+add_definitions(
+        -DLED_CUBE_X_DIMENSION=${CUBE_SIZE_X}
+        -DLED_CUBE_Y_DIMENSION=${CUBE_SIZE_Y}
+        -DLED_CUBE_Z_DIMENSION=${CUBE_SIZE_Z}
+        -DLED_CUBE_N_CHANNELS=${CUBE_N_COLOURS}
+        -DLED_CUBE_NAME="${CUBE_NAME}"
+        -DLED_CUBE_UID=0  # TODO: Generate unique number per build
+        -DLED_CUBE_VERSION=${CUBE_VERSION}
+)
+
+# COMPILE THE ANIM LIBS
+add_subdirectory(anim)
+
+
 if ( ${BUILD_TESTS} )
     add_library(jgLedCubeCore core.cpp)
 #    add_library(jgLedCubeSerial serial.cpp serial_test.cpp)
 
     add_subdirectory( pc )
 endif()
+
 
 if ( ${BUILD_ARDUINO} )
     generate_arduino_library(jgLedCubeCore
@@ -17,6 +33,7 @@ if ( ${BUILD_ARDUINO} )
     add_subdirectory( arduino )
 endif()
 
+
 if ( ${BUILD_STM32} )
     add_library(jgLedCubeCore core.cpp)
     STM32_SET_TARGET_PROPERTIES(jgLedCubeCore)
@@ -28,14 +45,3 @@ if ( ${BUILD_STM32} )
 
     add_subdirectory( stm32 )
 endif()
-
-target_compile_definitions(jgLedCubeCore
-        PUBLIC
-        LED_CUBE_X_DIMENSION=${CUBE_SIZE_X}
-        LED_CUBE_Y_DIMENSION=${CUBE_SIZE_Y}
-        LED_CUBE_Z_DIMENSION=${CUBE_SIZE_Z}
-        LED_CUBE_N_CHANNELS=${CUBE_N_COLOURS}
-        LED_CUBE_NAME="${CUBE_NAME}"
-        LED_CUBE_UID=0  # TODO: Generate unique number per build
-        LED_CUBE_VERSION=${CUBE_VERSION}
-        )

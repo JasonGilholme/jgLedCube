@@ -7,6 +7,7 @@
     -DCUBE_SIZE_Y=4
     -DCUBE_SIZE_Z=4
     -DCUBE_N_COLOURS=3
+    -DPROGRAM_TO_BUILD=ANIMS
 
 
 ### Arduino Specific Notes
