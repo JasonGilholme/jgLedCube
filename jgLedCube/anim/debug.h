@@ -1,6 +1,3 @@
-//
-// Created by jase on 1/10/16.
-//
 
 #ifndef JGLEDCUBE_ANIM_DEBUG_H
 #define JGLEDCUBE_ANIM_DEBUG_H
