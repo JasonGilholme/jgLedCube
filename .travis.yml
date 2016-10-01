@@ -13,7 +13,7 @@ before_install:
  - sudo apt-get install -y libgtest-dev
  - cd /usr/src/gtest
  - sudo cmake .
- - sudo cmake --build . 
+ - sudo cmake --build .
  - sudo mv libg* /usr/local/lib/
  - cd -
  # AVR Dependencies ======================================================================================
@@ -27,7 +27,7 @@ compiler:
 os:
 - linux
 
-before_script: cmake -DTARGET_HARDWARE=$TARGET_HARDWARE -DCMAKE_CXX_COMPILER=c++
+before_script: cmake -DTARGET_HARDWARE=$TARGET_HARDWARE
 script:
  - make
  - if [[ "$TARGET_HARDWARE" = "PC" ]]; then jgLedCube/pc/PC_tests; fi
