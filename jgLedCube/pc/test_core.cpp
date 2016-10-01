@@ -165,13 +165,13 @@ TEST(Core, Modulation) {
             uint8_t array_bit = jgLedCube::core::getBit(jgLedCube::core::dataArray[i], j);
 
             switch (i) {
-                case LED_CUBE_MODULATION_BLOCK_SIZE:
+                case (uint16_t)(LED_CUBE_MODULATION_BLOCK_SIZE):
                     EXPECT_EQ(array_bit, j == 0 ? 1 : 0);
                     break;
-                case LED_CUBE_MODULATION_BLOCK_SIZE * 2:
+                case (uint16_t)(LED_CUBE_MODULATION_BLOCK_SIZE * 2):
                     EXPECT_EQ(array_bit, j == 1 ? 1 : 0);
                     break;
-                case LED_CUBE_MODULATION_BLOCK_SIZE * 3:
+                case (uint16_t)(LED_CUBE_MODULATION_BLOCK_SIZE * 3):
                     EXPECT_EQ(array_bit, j == 2 ? 1 : 0);
                     break;
                 default :
