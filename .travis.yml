@@ -13,6 +13,6 @@ os:
 - linux
 
 before_script:
- - cmake -DTARGET_HARDWARE=PC
+ - cmake -DTARGET_HARDWARE=PC -DCMAKE_VERBOSE_MAKEFILE=ON
 
 script: make
