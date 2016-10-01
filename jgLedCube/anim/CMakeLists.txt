@@ -1,10 +1,12 @@
 
 if ( ${BUILD_TESTS} )
     add_library(jgLedCubeAnimDebug debug.cpp)
+    add_library(jgLedCubeAnimSweep sweep.cpp)
 endif()
 
 if ( ${BUILD_ARDUINO} )
     generate_arduino_library(jgLedCubeAnimDebug SRCS debug.cpp)
+    generate_arduino_library(jgLedCubeAnimSweep SRCS sweep.cpp)
 endif()
 
 #if ( ${BUILD_STM32} )

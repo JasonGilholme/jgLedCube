@@ -1,6 +1,6 @@
 
 #include <jgLedCube/core.h>
-
+#include "debug.h"
 
 namespace jgLedCube {
     namespace anim {
