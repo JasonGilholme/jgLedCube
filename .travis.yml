@@ -1,12 +1,19 @@
 language: cpp
 
+env:
+  - TARGET_HARDWARE=PC
+  - TARGET_HARDWARE=ARDUINO
+
 sudo: required
 dist: trusty
 
 before_install:
+ # GOOGLE TEST
  - sudo apt-get -qq update
  - sudo apt-get install -y libgtest-dev
  - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
+ # AVR GCC
+ - sudo apt-get install -qq gcc-avr binutils-avr avr-libc
 
 compiler:
 - gcc
@@ -14,5 +21,7 @@ compiler:
 os:
 - linux
 
-before_script: cmake -DTARGET_HARDWARE=PC -DCMAKE_CXX_COMPILER=c++
-script: make && jgLedCube/pc/PC_tests
+before_script: cmake -DTARGET_HARDWARE=$TARGET_HARDWARE -DCMAKE_CXX_COMPILER=c++
+script:
+ - make
+ - test $TARGET_HARDWARE = PC && jgLedCube/pc/PC_tests
