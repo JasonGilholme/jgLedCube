@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.0)
 
 if (NOT DEFINED TARGET_HARDWARE)
     message( STATUS "TARGET_HARDWARE is not set! Only tests will be built.  Set to ARDUINO or STM32 to build deployable targets..." )
