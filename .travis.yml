@@ -1,0 +1,14 @@
+language: cpp
+
+sudo: required
+dist: trusty
+
+compiler:
+- gcc
+
+os:
+- linux
+
+before_script: cmake -DTARGET_HARDWARE=PC
+
+script: make
