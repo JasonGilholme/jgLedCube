@@ -1,14 +1,16 @@
 language: cpp
+compiler: gcc
+
+os: linux
+dist: trusty
+sudo: required
 
 env:
   - TARGET_HARDWARE=PC
   - TARGET_HARDWARE=ARDUINO
 
-sudo: required
-dist: trusty
-
 before_install:
- # PC Testint Dependencies ===============================================================================
+ # PC Dependencies ===============================================================================
  - sudo apt-get -qq update
  - sudo apt-get install -y libgtest-dev
  - cd /usr/src/gtest
@@ -16,18 +18,14 @@ before_install:
  - sudo cmake --build .
  - sudo mv libg* /usr/local/lib/
  - cd -
- # AVR Dependencies ======================================================================================
+ # ARDUINO Dependencies ======================================================================================
  - sudo apt-get install -qq gcc-avr binutils-avr avr-libc
  - sudo apt-get install arduino arduino-core
  - export PATH=$PATH:/usr/bin:/usr/local/bin
 
-compiler:
-- gcc
+before_script:
+ - cmake -DTARGET_HARDWARE=$TARGET_HARDWARE
 
-os:
-- linux
-
-before_script: cmake -DTARGET_HARDWARE=$TARGET_HARDWARE
 script:
  - make
  - if [[ "$TARGET_HARDWARE" = "PC" ]]; then jgLedCube/pc/PC_tests; fi
