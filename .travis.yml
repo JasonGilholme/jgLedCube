@@ -24,7 +24,8 @@ before_install:
  - export PATH=$PATH:/usr/bin:/usr/local/bin
 
 before_script:
- - cmake -DTARGET_HARDWARE=$TARGET_HARDWARE
+ - mkdir build && cd build
+ - cmake -DTARGET_HARDWARE=$TARGET_HARDWARE ..
 
 script:
  - make
