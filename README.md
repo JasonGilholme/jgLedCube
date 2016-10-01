@@ -1,4 +1,8 @@
+[![Build Status](https://travis-ci.org/JasonGilholme/jgLedCube-embedded.png)](https://travis-ci.org/JasonGilholme/jgLedCube-embedded)
+
 ## jgLedCube-embedded
+
+Check out the .travis.yml file for dependencies.
 
 ### Configuration CMake options
 
@@ -12,7 +16,7 @@
 
 ### Arduino Specific Notes
 
-    -DTARGET_HARDWARE=STM32
+    -DTARGET_HARDWARE=ARDUINO
     -DARDUINO_DEFAULT_BOARD=uno
     -DARDUINO_DEFAULT_PORT=/dev/ttyUSB0
     -DARDUINO_DEFAULT_PROGRAMMER=usbasp
