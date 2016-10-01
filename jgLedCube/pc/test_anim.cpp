@@ -59,10 +59,3 @@ TEST(Anim, SweepZ) {
         done = jgLedCube::anim::sweep_z::pump();
     }
 }
-
-
-int main(int argc, char **argv) {
-    jgLedCube::core::printConfig();
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

@@ -116,6 +116,39 @@ TEST(Core, SetLed) {
     }
 }
 
+TEST(Core, GetLed) {
+    jgLedCube::core::clear();
+
+    jgLedCube::core::setLed(1, 1, 1, 1, 2, 3);
+    jgLedCube::core::setLed(2, 2, 2, 4, 5, 6);
+    jgLedCube::core::setLed(3, 3, 3, 7, 8, 9);
+    jgLedCube::core::setLed(4, 4, 4, 10, 11, 12);
+
+    uint8_t r = 0;
+    uint8_t g = 0;
+    uint8_t b = 0;
+
+    jgLedCube::core::getLed(1, 1, 1, r, g, b);
+    EXPECT_EQ(r, 1);
+    EXPECT_EQ(g, 2);
+    EXPECT_EQ(b, 3);
+
+    jgLedCube::core::getLed(2, 2, 2, r, g, b);
+    EXPECT_EQ(r, 4);
+    EXPECT_EQ(g, 5);
+    EXPECT_EQ(b, 6);
+
+    jgLedCube::core::getLed(3, 3, 3, r, g, b);
+    EXPECT_EQ(r, 7);
+    EXPECT_EQ(g, 8);
+    EXPECT_EQ(b, 9);
+
+    jgLedCube::core::getLed(4, 4, 4, r, g, b);
+    EXPECT_EQ(r, 10);
+    EXPECT_EQ(g, 11);
+    EXPECT_EQ(b, 12);
+}
+
 TEST(Core, Modulation) {
     // TEST THAT THE RIGHT MODULATION BITS ARE BEING SET
     jgLedCube::core::clear();

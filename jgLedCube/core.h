@@ -34,6 +34,7 @@ namespace jgLedCube {
         void setLed(uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b);
         void setLedFloat(float x, float y, float z, uint8_t r, uint8_t g, uint8_t b);
         void clear();
+        void getLed(uint8_t x, uint8_t y, uint8_t z, uint8_t &r, uint8_t &g, uint8_t &b);
 
         // GET & SET BITS IN A BYTE
         void setBit(uint8_t &b, const uint8_t &n, const uint8_t &v);

@@ -95,6 +95,47 @@ namespace jgLedCube {
 #endif
         }
 
+        void getLed(uint8_t x, uint8_t y, uint8_t z, uint8_t &r, uint8_t &g, uint8_t &b){
+
+            uint16_t led_id = (((z - 1) * LED_CUBE_XY_DIMENSION) + (((y - 1) * xDimension)) + x - 1) * LED_CUBE_N_CHANNELS;
+            uint8_t byte_id = led_id  / 8;
+            uint8_t bit_id = led_id % 8;
+
+            r = 0;
+            setBit(r, 0, getBit(dataArray[byte_id], bit_id));
+            setBit(r, 1, getBit(dataArray[byte_id + modBlockSize], bit_id));
+            setBit(r, 2, getBit(dataArray[byte_id + modBlockSize_x2], bit_id));
+            setBit(r, 3, getBit(dataArray[byte_id + modBlockSize_x3], bit_id));
+
+#if LED_CUBE_N_CHANNELS >= 2
+            bit_id++;
+            if (bit_id == 8){
+                byte_id++;
+                bit_id=0;
+            }
+
+            g = 0;
+            setBit(g, 0, getBit(dataArray[byte_id], bit_id));
+            setBit(g, 1, getBit(dataArray[byte_id + modBlockSize], bit_id));
+            setBit(g, 2, getBit(dataArray[byte_id + modBlockSize_x2], bit_id));
+            setBit(g, 3, getBit(dataArray[byte_id + modBlockSize_x3], bit_id));
+#endif
+#if LED_CUBE_N_CHANNELS >= 3
+            bit_id++;
+            if (bit_id == 8){
+                byte_id++;
+                bit_id=0;
+            }
+
+            b = 0;
+            setBit(b, 0, getBit(dataArray[byte_id], bit_id));
+            setBit(b, 1, getBit(dataArray[byte_id + modBlockSize], bit_id));
+            setBit(b, 2, getBit(dataArray[byte_id + modBlockSize_x2], bit_id));
+            setBit(b, 3, getBit(dataArray[byte_id + modBlockSize_x3], bit_id));
+#endif
+        }
+
+
 #ifdef PC_BUILD
         void printData() {
             for (int _byte_index = 0; _byte_index < dataArraySize; _byte_index++) {
