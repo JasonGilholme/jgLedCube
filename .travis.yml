@@ -11,11 +11,15 @@ before_install:
  # PC Testint Dependencies ===============================================================================
  - sudo apt-get -qq update
  - sudo apt-get install -y libgtest-dev
- - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
+ - cd /usr/src/gtest
+ - sudo cmake .
+ - sudo cmake --build . 
+ - sudo mv libg* /usr/local/lib/
+ - cd -
  # AVR Dependencies ======================================================================================
  - sudo apt-get install -qq gcc-avr binutils-avr avr-libc
  - sudo apt-get install arduino arduino-core
- - export PATH=$PATH:/usr/bin:/usr/local/bin  # Really??
+ - export PATH=$PATH:/usr/bin:/usr/local/bin
 
 compiler:
 - gcc
@@ -26,4 +30,4 @@ os:
 before_script: cmake -DTARGET_HARDWARE=$TARGET_HARDWARE -DCMAKE_CXX_COMPILER=c++
 script:
  - make
- - test $TARGET_HARDWARE = PC && jgLedCube/pc/PC_tests
+ - if [[ "$TARGET_HARDWARE" = "PC" ]]; then jgLedCube/pc/PC_tests; fi
