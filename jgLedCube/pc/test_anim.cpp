@@ -5,7 +5,7 @@
 #include <jgLedCube/core.h>
 #include <jgLedCube/anim/debug.h>
 #include <jgLedCube/anim/sweep.h>
-
+#include <jgLedCube/anim/fade.h>
 
 TEST(Anim, Debug) {
     bool done = false;
@@ -18,6 +18,25 @@ TEST(Anim, Debug) {
     }
 }
 
+TEST(Anim, FadeOut) {
+    bool done = false;
+
+    jgLedCube::core::clear();
+
+    for(uint8_t z=0; z < LED_CUBE_Z_DIMENSION; z++){
+        for(uint8_t y=0; y < LED_CUBE_Y_DIMENSION; y++){
+            for(uint8_t x=0; x < LED_CUBE_X_DIMENSION; x++) {
+                jgLedCube::core::setLed(x, y, z, 15, 15, 15);
+            }
+        }
+    }
+
+
+    jgLedCube::anim::fade_out::reset();
+    while (!done){
+        done = jgLedCube::anim::fade_out::pump();
+    }
+}
 
 TEST(Anims, SweepX) {
     bool done = false;

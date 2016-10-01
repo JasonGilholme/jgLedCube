@@ -2,6 +2,7 @@
 if ( ${BUILD_TESTS} )
     add_library(jgLedCubeAnimDebug debug.cpp)
     add_library(jgLedCubeAnimSweep sweep.cpp)
+    add_library(jgLedCubeAnimFade fade.cpp)
 endif()
 
 if ( ${BUILD_ARDUINO} )

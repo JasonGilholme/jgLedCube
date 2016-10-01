@@ -5,6 +5,7 @@ target_link_libraries(PC_tests
         jgLedCubeCore
         jgLedCubeAnimDebug
         jgLedCubeAnimSweep
+        jgLedCubeAnimFade
 
         gtest
         pthread

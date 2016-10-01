@@ -14,5 +14,4 @@ void loop(){
     while (!done){
         done = jgLedCube::anim::debug_blink::pump();
     }
-
 }
