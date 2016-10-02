@@ -16,7 +16,7 @@ add_subdirectory(anim)
 
 if ( ${BUILD_TESTS} )
     add_library(jgLedCubeCore core.cpp)
-#    add_library(jgLedCubeSerial serial.cpp serial_test.cpp)
+    add_library(jgLedCubeSerial serial.cpp)
 
     add_subdirectory( pc )
 endif()
