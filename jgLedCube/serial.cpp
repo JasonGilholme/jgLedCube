@@ -34,6 +34,15 @@ namespace jgLedCube {
             return (inCmdPacket[0] & 15);
         }
 
+        /// clear() Command Format
+        ///  CMD ID    /        /    /        /    /        /    /
+        /// [ xxxx   xxxx ] [ xxxx xxxx ] [ xxxx xxxx ] [ xxxx xxxx ]
+        void encode_clear(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){
+            outCmdPacket[0] = 0 ^ (LED_CUBE_CMD_CLEAR & 15);
+            outCmdPacket[1] = 0;
+            outCmdPacket[2] = 0;
+            outCmdPacket[3] = 0;
+        }
 
         /// setLed() Command Format
         ///  CMD ID    X        Y    Z        R    G        B    /
@@ -104,13 +113,11 @@ namespace jgLedCube {
         /// getConfig() Return
         ///  CMD ID    R        G    B       N    V          ID
         /// [ xxxx   xxxx ] [ xxxx xxxx ] [ xx xxxxxx ] [ xxxxxxxx ]
-        void encode_getConfigReturn(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE],
-                                    uint8_t x, uint8_t y, uint8_t z,
-                                    uint8_t nchannels, uint8_t version, uint8_t uid){
-            outCmdPacket[0] = (x << 4) ^ (LED_CUBE_CMD_GET_CONFIG_RETURN & 15);
-            outCmdPacket[1] = (z << 4) ^ (y & 15);
-            outCmdPacket[2] = (nchannels << 6) ^ (version & 63);
-            outCmdPacket[3] = uid;
+        void encode_getConfigReturn(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){
+            outCmdPacket[0] = (LED_CUBE_X_DIMENSION << 4) ^ (LED_CUBE_CMD_GET_CONFIG_RETURN & 15);
+            outCmdPacket[1] = (LED_CUBE_Z_DIMENSION << 4) ^ (LED_CUBE_Y_DIMENSION & 15);
+            outCmdPacket[2] = (LED_CUBE_N_CHANNELS << 6) ^ (LED_CUBE_VERSION & 63);
+            outCmdPacket[3] = LED_CUBE_UID;
         }
         void decode_getConfigReturn(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t outArgs[6]){
             outArgs[0] = (inCmdPacket[0] & 240) >> 4;
@@ -119,6 +126,54 @@ namespace jgLedCube {
             outArgs[3] = (inCmdPacket[2] & 192) >> 6;
             outArgs[4] = inCmdPacket[2] & 63;
             outArgs[5] = inCmdPacket[3];
+        }
+
+        /// ++++++++++ PROCESSING ++++++++++ ///
+        void receiveCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t timeout){}
+        void sendCommand(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){}
+
+        void processCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){
+            uint8_t commandId = decode_commandId(inCmdPacket);
+
+            uint8_t cmdPacket[LED_CUBE_COMMAND_PACKET_SIZE] = {};
+            uint8_t argBuffer[6] = {};
+
+            switch (commandId) {
+                case LED_CUBE_CMD_SET_LED:
+                    decode_setLed(inCmdPacket, argBuffer);
+                    jgLedCube::core::setLed(argBuffer[0], argBuffer[1], argBuffer[2],
+                                            argBuffer[3], argBuffer[4], argBuffer[5]);
+                    break;
+
+                case LED_CUBE_CMD_SET_MODE:
+                    break;
+
+                case LED_CUBE_CMD_GET_CONFIG:
+                    jgLedCube::serial::encode_getConfigReturn(cmdPacket);
+                    sendCommand(cmdPacket);
+                    break;
+
+                case LED_CUBE_CMD_GET_LED:
+                    decode_getLed(inCmdPacket, argBuffer);
+                    jgLedCube::core::getLed(argBuffer[0], argBuffer[1], argBuffer[2],
+                                            argBuffer[3], argBuffer[4], argBuffer[5]);
+                    encode_getLedReturn(cmdPacket, argBuffer[3], argBuffer[4], argBuffer[5]);
+                    sendCommand(cmdPacket);
+                    break;
+
+                case LED_CUBE_CMD_GET_MODES:
+                    break;
+
+                case LED_CUBE_CMD_GET_MODE:
+                    break;
+
+                case LED_CUBE_CMD_CLEAR:
+                    jgLedCube::core::clear();
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }
