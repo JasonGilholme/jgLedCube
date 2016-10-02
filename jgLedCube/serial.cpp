@@ -34,10 +34,13 @@ namespace jgLedCube {
             return (inCmdPacket[0] & 15);
         }
 
+
         /// setLed() Command Format
         ///  CMD ID    X        Y    Z        R    G        B    /
         /// [ xxxx   xxxx ] [ xxxx xxxx ] [ xxxx xxxx ] [ xxxx xxxx ]
-        void encode_setLed(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b){
+        void encode_setLed(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE],
+                           uint8_t x, uint8_t y, uint8_t z,
+                           uint8_t r, uint8_t g, uint8_t b){
             outCmdPacket[0] = (x << 4) ^ (LED_CUBE_CMD_SET_LED & 15);
             outCmdPacket[1] = (z << 4) ^ (y & 15);
             outCmdPacket[2] = (g << 4) ^ (r & 15);
@@ -56,7 +59,8 @@ namespace jgLedCube {
         /// getLed()
         ///  CMD ID    X        Y    Z        /    /        /    /
         /// [ xxxx   xxxx ] [ xxxx xxxx ] [ xxxx xxxx ] [ xxxx xxxx ]
-        void encode_getLed(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t x, uint8_t y, uint8_t z){
+        void encode_getLed(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE],
+                           uint8_t x, uint8_t y, uint8_t z){
             outCmdPacket[0] = (x << 4) ^ (LED_CUBE_CMD_GET_LED & 15);
             outCmdPacket[1] = (z << 4) ^ (y & 15);
             outCmdPacket[2] = 0;
@@ -72,7 +76,8 @@ namespace jgLedCube {
         /// getLed() Return
         ///  CMD ID    R        G    B        /    /        /    /
         /// [ xxxx   xxxx ] [ xxxx xxxx ] [ xxxx xxxx ] [ xxxx xxxx ]
-        void encode_getLedReturn(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t r, uint8_t g, uint8_t b){
+        void encode_getLedReturn(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE],
+                                 uint8_t r, uint8_t g, uint8_t b){
             outCmdPacket[0] = (r << 4) ^ (LED_CUBE_CMD_GET_LED_RETURN & 15);
             outCmdPacket[1] = (b << 4) ^ (g & 15);
             outCmdPacket[2] = 0;
@@ -82,6 +87,38 @@ namespace jgLedCube {
             outArgs[0] = (inCmdPacket[0] & 240) >> 4;
             outArgs[1] = inCmdPacket[1] & 15;
             outArgs[2] = (inCmdPacket[1] & 240) >> 4;
+        }
+
+
+        /// getConfig()
+        ///  CMD ID    /        /    /        /    /        /    /
+        /// [ xxxx   xxxx ] [ xxxx xxxx ] [ xxxx xxxx ] [ xxxx xxxx ]
+        void encode_getConfig(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){
+            outCmdPacket[0] = 0 ^ (LED_CUBE_CMD_GET_CONFIG & 15);
+            outCmdPacket[1] = 0;
+            outCmdPacket[2] = 0;
+            outCmdPacket[3] = 0;
+        }
+
+
+        /// getConfig() Return
+        ///  CMD ID    R        G    B       N    V          ID
+        /// [ xxxx   xxxx ] [ xxxx xxxx ] [ xx xxxxxx ] [ xxxxxxxx ]
+        void encode_getConfigReturn(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE],
+                                    uint8_t x, uint8_t y, uint8_t z,
+                                    uint8_t nchannels, uint8_t version, uint8_t uid){
+            outCmdPacket[0] = (x << 4) ^ (LED_CUBE_CMD_GET_CONFIG_RETURN & 15);
+            outCmdPacket[1] = (z << 4) ^ (y & 15);
+            outCmdPacket[2] = (nchannels << 6) ^ (version & 63);
+            outCmdPacket[3] = uid;
+        }
+        void decode_getConfigReturn(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t outArgs[6]){
+            outArgs[0] = (inCmdPacket[0] & 240) >> 4;
+            outArgs[1] = inCmdPacket[1] & 15;
+            outArgs[2] = (inCmdPacket[1] & 240) >> 4;
+            outArgs[3] = (inCmdPacket[2] & 192) >> 6;
+            outArgs[4] = inCmdPacket[2] & 63;
+            outArgs[5] = inCmdPacket[3];
         }
     }
 }

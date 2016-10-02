@@ -29,9 +29,9 @@ namespace jgLedCube {
 
         /// getConfig()
         void encode_getConfig(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
-        void decode_getConfig();
-        void encode_getConfigReturn();
-        void decode_getConfigReturn();
+        // void decode_getConfig();  // # TODO: Delete: Doesn't require args so further decoding is redundant
+        void encode_getConfigReturn(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t x, uint8_t y, uint8_t z, uint8_t nchannels, uint8_t version, uint8_t uid);
+        void decode_getConfigReturn(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t outArgs[6]);
 
         /// setMode()
         void encode_setMode();
