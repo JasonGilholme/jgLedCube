@@ -34,6 +34,7 @@ namespace jgLedCube {
             return (inCmdPacket[0] & 15);
         }
 
+
         /// clear() Command Format
         ///  CMD ID    /        /    /        /    /        /    /
         /// [ xxxx   xxxx ] [ xxxx xxxx ] [ xxxx xxxx ] [ xxxx xxxx ]
@@ -43,6 +44,7 @@ namespace jgLedCube {
             outCmdPacket[2] = 0;
             outCmdPacket[3] = 0;
         }
+
 
         /// setLed() Command Format
         ///  CMD ID    X        Y    Z        R    G        B    /
@@ -135,8 +137,8 @@ namespace jgLedCube {
         void processCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){
             uint8_t commandId = decode_commandId(inCmdPacket);
 
-            uint8_t cmdPacket[LED_CUBE_COMMAND_PACKET_SIZE] = {};
-            uint8_t argBuffer[6] = {};
+            static uint8_t cmdPacket[LED_CUBE_COMMAND_PACKET_SIZE] = {};
+            static uint8_t argBuffer[6] = {};
 
             switch (commandId) {
                 case LED_CUBE_CMD_SET_LED:

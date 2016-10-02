@@ -15,17 +15,7 @@
 namespace jgLedCube {
     namespace core {
 
-        const char* cubeName        = LED_CUBE_NAME;
-        const double cubeUid        = LED_CUBE_UID;
-        const double cubeVersion    = LED_CUBE_VERSION;
-
-        // CUBE CONFIGURATION
-        const uint8_t xDimension    = LED_CUBE_X_DIMENSION;
-        const uint8_t yDimension    = LED_CUBE_Y_DIMENSION;
-        const uint8_t zDimension    = LED_CUBE_Z_DIMENSION;
-        const uint8_t nChannels     = LED_CUBE_N_CHANNELS;
-
-        // VARS FOR INTERNAL WORKINGS
+        // CONST VARS FOR ARRAY USE
         const uint16_t modBlockSize         = LED_CUBE_MODULATION_BLOCK_SIZE;
         const uint16_t modBlockSize_x2      = LED_CUBE_MODULATION_BLOCK_SIZE_X2;
         const uint16_t modBlockSize_x3      = LED_CUBE_MODULATION_BLOCK_SIZE_X3;
@@ -61,10 +51,13 @@ namespace jgLedCube {
              * then B111 -> B444 etc. This is then repeated for each modulation bit as well.
              *
              * */
+            static uint16_t led_id = 0;
+            static uint8_t byte_id = 0;
+            static uint8_t bit_id = 0;
 
-            uint16_t led_id = (((z - 1) * LED_CUBE_XY_DIMENSION) + (((y - 1) * xDimension)) + x - 1) * LED_CUBE_N_CHANNELS;
-            uint8_t byte_id = led_id  / 8;
-            uint8_t bit_id = led_id % 8;
+            led_id = (((z - 1) * LED_CUBE_XY_DIMENSION) + (((y - 1) * LED_CUBE_X_DIMENSION)) + x - 1) * LED_CUBE_N_CHANNELS;
+            byte_id = led_id  / 8;
+            bit_id = led_id % 8;
 
             setBit(dataArray[byte_id], bit_id, getBit(r, 0));
             setBit(dataArray[byte_id + modBlockSize], bit_id, getBit(r, 1));
@@ -96,10 +89,13 @@ namespace jgLedCube {
         }
 
         void getLed(uint8_t x, uint8_t y, uint8_t z, uint8_t &r, uint8_t &g, uint8_t &b){
+            static uint16_t led_id = 0;
+            static uint8_t byte_id = 0;
+            static uint8_t bit_id = 0;
 
-            uint16_t led_id = (((z - 1) * LED_CUBE_XY_DIMENSION) + (((y - 1) * xDimension)) + x - 1) * LED_CUBE_N_CHANNELS;
-            uint8_t byte_id = led_id  / 8;
-            uint8_t bit_id = led_id % 8;
+            led_id = (((z - 1) * LED_CUBE_XY_DIMENSION) + (((y - 1) * LED_CUBE_X_DIMENSION)) + x - 1) * LED_CUBE_N_CHANNELS;
+            byte_id = led_id  / 8;
+            bit_id = led_id % 8;
 
             r = 0;
             setBit(r, 0, getBit(dataArray[byte_id], bit_id));
@@ -153,6 +149,7 @@ namespace jgLedCube {
         }
 
         void printConfig() {
+            std::cout << "====================================" << std::endl;
             std::cout << "CUBE_NAME: "              << LED_CUBE_NAME                    << std::endl;
             std::cout << "CUBE_UID: "               << LED_CUBE_UID                     << std::endl;
             std::cout << "CUBE_VERSION: "           << LED_CUBE_VERSION                 << std::endl;
@@ -162,6 +159,7 @@ namespace jgLedCube {
             std::cout << "N_CHANNELS: "             << LED_CUBE_N_CHANNELS              << std::endl;
             std::cout << "MODULATION_BLOCK_SIZE: "  << LED_CUBE_MODULATION_BLOCK_SIZE   << std::endl;
             std::cout << "DATA_ARRAY_SIZE: "        << LED_CUBE_DATA_ARRAY_SIZE         << std::endl;
+            std::cout << "====================================" << std::endl;
         }
 #endif
     }
