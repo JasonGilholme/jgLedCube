@@ -14,6 +14,9 @@ namespace jgLedCube {
         ///                      LOGIC                        ///
         /// ================================================= ///
 
+        /// Get's the command id from a command packet
+        uint8_t decode_commandId(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
+
         /// setLed()
         void encode_setLed(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b);
         void decode_setLed(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t outArgs[6]);
@@ -25,7 +28,7 @@ namespace jgLedCube {
         void decode_getLedReturn(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t outArgs[3]);
 
         /// getConfig()
-        void encode_getConfig();
+        void encode_getConfig(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
         void decode_getConfig();
         void encode_getConfigReturn();
         void decode_getConfigReturn();
