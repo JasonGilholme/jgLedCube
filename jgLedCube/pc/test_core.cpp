@@ -116,6 +116,27 @@ TEST(Core, SetLed) {
     }
 }
 
+TEST(Core, GetLedLoop) {
+    jgLedCube::core::clear();
+
+    uint8_t r = 0;
+    uint8_t g = 0;
+    uint8_t b = 0;
+
+    for (uint8_t z=1; z <= LED_CUBE_Z_DIMENSION; z++){
+        for (uint8_t y=1; y <= LED_CUBE_Y_DIMENSION; y++){
+            for (uint8_t x=1; x <= LED_CUBE_X_DIMENSION; x++){
+                jgLedCube::core::clear();
+                jgLedCube::core::setLed(x, y, z, 14, 9, 3);
+                jgLedCube::core::getLed(x, y, z, r, g, b);
+                EXPECT_EQ(r, 14);
+                EXPECT_EQ(g, 9);
+                EXPECT_EQ(b, 3);
+            }
+        }
+    }
+}
+
 TEST(Core, GetLed) {
     jgLedCube::core::clear();
 
