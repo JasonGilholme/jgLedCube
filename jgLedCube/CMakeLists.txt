@@ -26,9 +26,9 @@ if ( ${BUILD_ARDUINO} )
     generate_arduino_library(jgLedCubeCore
             BOARD ${ARDUINO_DEFAULT_BOARD}
             SRCS  core.cpp)
-#    generate_arduino_library(jgLedCubeSerial
-#            BOARD ${ARDUINO_DEFAULT_BOARD}
-#            SRCS  serial.cpp serial_arduino.cpp)
+    generate_arduino_library(jgLedCubeSerial
+            BOARD ${ARDUINO_DEFAULT_BOARD}
+            SRCS  serial.cpp)
 
     add_subdirectory( arduino )
 endif()
