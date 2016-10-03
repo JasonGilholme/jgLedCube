@@ -3,6 +3,8 @@
 #ifndef JGLEDCUBE_DEFINES_H
 #define JGLEDCUBE_DEFINES_H
 
+#define LED_CUBE_SERIAL_BAUD 9600
+
 /// ++++++++++ COMMANDS ++++++++++ ///
 #define LED_CUBE_CMD_SET_LED 1
 #define LED_CUBE_CMD_SET_MODE 2

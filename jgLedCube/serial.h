@@ -4,11 +4,19 @@
 #define LED_CUBE_SERIAL_H
 
 #define LED_CUBE_COMMAND_PACKET_SIZE 4
+#define LED_CUBE_TRANSPORT_PACKET_SIZE LED_CUBE_COMMAND_PACKET_SIZE + 4
 
 #include <stdint.h>
 
 namespace jgLedCube {
     namespace serial {
+
+        extern uint8_t transportOutBytes[LED_CUBE_TRANSPORT_PACKET_SIZE];
+        extern uint8_t encodeCommandPacket[LED_CUBE_COMMAND_PACKET_SIZE];
+        extern uint8_t decodeCommandPacket[LED_CUBE_COMMAND_PACKET_SIZE];
+        extern const uint8_t transportSB;
+        extern const uint8_t transportEB;
+
 
         /// ================================================= ///
         ///                      LOGIC                        ///
@@ -53,7 +61,7 @@ namespace jgLedCube {
 
         /// ++++++++++ PROCESSING ++++++++++ ///
         void processCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
-        void receiveCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t timeout);
+        void receiveCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE], uint8_t timeoutSeconds);
         void sendCommand(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
 
         /// ================================================= ///
@@ -64,10 +72,10 @@ namespace jgLedCube {
         void init();
 
         /// Reads a byte of data from RX
-        uint8_t readData();
+        uint8_t receiveByte();
 
         /// Sends a byte of data down TX
-        bool writeData(uint8_t data);
+        bool sendByte(uint8_t data);
     }
 }
 

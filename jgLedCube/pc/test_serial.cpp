@@ -174,3 +174,24 @@ TEST(Serial, ProcessClear) {
         }
     }
 }
+
+TEST(Serial, Transport){
+    // Encode the command
+    uint8_t encodedCommand[LED_CUBE_COMMAND_PACKET_SIZE] = {};
+    jgLedCube::serial::encode_setLed(encodedCommand, 2, 2, 2, 15, 13, 9);
+
+    // Send it
+    jgLedCube::serial::sendCommand(encodedCommand);
+
+    // Interogate the output buffer
+    EXPECT_EQ(jgLedCube::serial::transportOutBytes[0], jgLedCube::serial::transportSB);
+    EXPECT_EQ(jgLedCube::serial::transportOutBytes[1], jgLedCube::serial::transportSB);
+
+    EXPECT_EQ(jgLedCube::serial::transportOutBytes[2], encodedCommand[0]);
+    EXPECT_EQ(jgLedCube::serial::transportOutBytes[3], encodedCommand[1]);
+    EXPECT_EQ(jgLedCube::serial::transportOutBytes[4], encodedCommand[2]);
+    EXPECT_EQ(jgLedCube::serial::transportOutBytes[5], encodedCommand[3]);
+
+    EXPECT_EQ(jgLedCube::serial::transportOutBytes[6], (uint8_t)~(uint8_t)encodedCommand[0]);
+    EXPECT_EQ(jgLedCube::serial::transportOutBytes[7], jgLedCube::serial::transportEB);
+}
