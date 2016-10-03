@@ -8,6 +8,7 @@ add_definitions(
         -DLED_CUBE_NAME="${CUBE_NAME}"
         -DLED_CUBE_UID=0  # TODO: Generate unique number per build
         -DLED_CUBE_VERSION=${CUBE_VERSION}
+        -DPHONY_SERIAL=${PHONY_SERIAL}
 )
 
 # COMPILE THE ANIM LIBS
