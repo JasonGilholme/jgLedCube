@@ -1,10 +1,10 @@
 
-#ifdef PC_BUILD
-#include <iostream>
-#endif
+#include "fade.h"
 
 #include <jgLedCube/embedded/core.h>
-#include "fade.h"
+
+#include <stdint.h>"
+
 
 namespace jgLedCube {
     namespace anim {

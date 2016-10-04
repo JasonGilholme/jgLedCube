@@ -1,6 +1,10 @@
 
-#include <jgLedCube/embedded/core.h>
 #include "debug.h"
+
+#include <jgLedCube/embedded/core.h>
+
+#include <stdint.h>"
+
 
 namespace jgLedCube {
     namespace anim {

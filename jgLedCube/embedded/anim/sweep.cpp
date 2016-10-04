@@ -1,10 +1,10 @@
 
-#ifdef TESTING
-#include <iostream>
-#endif
+#include "sweep.h"
 
 #include <jgLedCube/embedded/core.h>
-#include "sweep.h"
+
+#include <stdint.h>"
+
 
 namespace jgLedCube {
     namespace anim {
