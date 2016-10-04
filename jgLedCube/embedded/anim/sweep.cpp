@@ -1,9 +1,9 @@
 
-#ifdef PC_BUILD
+#ifdef TESTING
 #include <iostream>
 #endif
 
-#include <jgLedCube/core.h>
+#include <jgLedCube/embedded/core.h>
 #include "sweep.h"
 
 namespace jgLedCube {

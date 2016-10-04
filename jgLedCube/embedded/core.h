@@ -1,18 +1,13 @@
 /// Core data functions & variables for cube operation.
 
-#ifndef JGLEDCUBE_CORE_H
-#define JGLEDCUBE_CORE_H
+#ifndef JGLEDCUBE_EMBEDDED_CORE_H
+#define JGLEDCUBE_EMBEDDED_CORE_H
 
-#define LED_CUBE_XY_DIMENSION LED_CUBE_X_DIMENSION * LED_CUBE_Y_DIMENSION
-#define LED_CUBE_XYZ_DIMENSION LED_CUBE_XY_DIMENSION * LED_CUBE_Y_DIMENSION
-#define LED_CUBE_MODULATION_BITS 4
-#define LED_CUBE_MAX_INTENSITY 15
-#define LED_CUBE_MODULATION_BLOCK_SIZE LED_CUBE_XYZ_DIMENSION / 8.0 * LED_CUBE_N_CHANNELS
-#define LED_CUBE_MODULATION_BLOCK_SIZE_X2 LED_CUBE_MODULATION_BLOCK_SIZE * 2
-#define LED_CUBE_MODULATION_BLOCK_SIZE_X3 LED_CUBE_MODULATION_BLOCK_SIZE * 3
-#define LED_CUBE_DATA_ARRAY_SIZE LED_CUBE_MODULATION_BLOCK_SIZE * LED_CUBE_MODULATION_BITS
+#include <jgLedCube/embedded/defines.h>
 
 #include <stdint.h>
+
+// TODO: Could this be all header? and make use of inline functions - this will be high frequency.
 
 namespace jgLedCube {
     namespace core {
@@ -46,4 +41,4 @@ namespace jgLedCube {
     }
 }
 
-#endif //JGLEDCUBE_CORE_H
+#endif //JGLEDCUBE_EMBEDDED_CORE_H

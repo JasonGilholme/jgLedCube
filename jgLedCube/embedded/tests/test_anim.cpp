@@ -2,10 +2,11 @@
 
 #include <gtest/gtest.h>
 
-#include <jgLedCube/core.h>
-#include <jgLedCube/anim/debug.h>
-#include <jgLedCube/anim/sweep.h>
-#include <jgLedCube/anim/fade.h>
+#include <jgLedCube/embedded/anim/debug.h>
+#include <jgLedCube/embedded/anim/sweep.h>
+#include <jgLedCube/embedded/anim/fade.h>
+
+#include <jgLedCube/embedded/core.h>
 
 TEST(Anim, Debug) {
     bool done = false;

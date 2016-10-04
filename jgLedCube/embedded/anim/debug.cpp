@@ -1,5 +1,5 @@
 
-#include <jgLedCube/core.h>
+#include <jgLedCube/embedded/core.h>
 #include "debug.h"
 
 namespace jgLedCube {

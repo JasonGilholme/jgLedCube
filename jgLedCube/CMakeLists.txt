@@ -1,49 +1,19 @@
-
-# DEFINE ALL THE ARGS FOR THE PRE PROCESSOR
-add_definitions(
-        -DLED_CUBE_X_DIMENSION=${CUBE_SIZE_X}
-        -DLED_CUBE_Y_DIMENSION=${CUBE_SIZE_Y}
-        -DLED_CUBE_Z_DIMENSION=${CUBE_SIZE_Z}
-        -DLED_CUBE_N_CHANNELS=${CUBE_N_COLOURS}
-        -DLED_CUBE_NAME="${CUBE_NAME}"
-        -DLED_CUBE_UID=0  # TODO: Generate unique number per build
-        -DLED_CUBE_VERSION=${CUBE_VERSION}
-        -DPHONY_SERIAL=${PHONY_SERIAL}
-)
-
-# COMPILE THE ANIM LIBS
-add_subdirectory(anim)
+# Set some global properties to gather all the test sources and libs for.
+define_property(GLOBAL PROPERTY TEST_SOURCES BRIEF_DOCS "Global list of test sources" FULL_DOCS "Global list of test sources")
+define_property(GLOBAL PROPERTY TEST_LIBS BRIEF_DOCS "Global list of test libs" FULL_DOCS "Global list of test libs")
 
 
-if ( ${BUILD_TESTS} )
-    add_library(jgLedCubeCore core.cpp)
-    add_library(jgLedCubeSerial serial.cpp serial_pc.cpp)
-    target_link_libraries(jgLedCubeSerial boost_system)
-
-    add_subdirectory( pc )
-endif()
+add_subdirectory(common)
+#add_subdirectory(desktop)
+add_subdirectory(embedded)
 
 
-if ( ${BUILD_ARDUINO} )
-    generate_arduino_library(jgLedCubeCore
-            BOARD ${ARDUINO_DEFAULT_BOARD}
-            SRCS  core.cpp)
-    generate_arduino_library(jgLedCubeSerial
-            BOARD ${ARDUINO_DEFAULT_BOARD}
-            SRCS  serial.cpp)
+if ( NOT DEFINED BUILD_EMBEDDED )
 
-    add_subdirectory( arduino )
-endif()
+    get_property(_TEST_SOURCES GLOBAL PROPERTY TEST_SOURCES)
+    get_property(_TEST_LIBS GLOBAL PROPERTY TEST_LIBS)
 
+    add_executable( c_tests test.cpp ${_TEST_SOURCES} )
+    target_link_libraries( c_tests ${_TEST_LIBS} gtest pthread )
 
-if ( ${BUILD_STM32} )
-    add_library(jgLedCubeCore core.cpp)
-    STM32_SET_TARGET_PROPERTIES(jgLedCubeCore)
-    STM32_ADD_HEX_BIN_TARGETS(jgLedCubeCore)
-
-#    add_library(jgLedCubeSerial serial.cpp serial_stm32.cpp)
-#    STM32_SET_TARGET_PROPERTIES(jgLedCubeSerial)
-#    STM32_ADD_HEX_BIN_TARGETS(jgLedCubeSerial)
-
-    add_subdirectory( stm32 )
 endif()

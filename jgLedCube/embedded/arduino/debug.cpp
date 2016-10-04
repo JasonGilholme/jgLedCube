@@ -1,8 +1,8 @@
 /// Debug blink to test on Arduino hardware
 
 #include <Arduino.h>
-#include <jgLedCube/core.h>
-#include <jgLedCube/anim/debug.h>
+#include <jgLedCube/embedded/core.h>
+#include <jgLedCube/embedded/anim/debug.h>
 
 void setup(){}
 

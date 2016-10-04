@@ -4,6 +4,15 @@
 
 Check out the .travis.yml file for dependencies.
 
+TO BUILD AN ARDUINO TARGET
+
+    -DBUILD_EMBEDDED=TRUE -DTARGET_HARDWARE=ARDUINO -DARDUINO_DEFAULT_BOARD=uno -DHARDWARE_PROGRAM=DEBUG
+
+TO BUILD FOR PC
+
+    -DTEST_SERIAL_PORT=/dev/ttyUSB0
+    
+
 ### Configuration CMake options
 
     -DCUBE_NAME=MyLedCube

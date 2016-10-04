@@ -1,9 +1,7 @@
 
 #include <stdint.h>
 
-#if defined(ARDUINO_BUILD)
-    #include <string.h>
-#elif defined(STM32_BUILD)
+#ifdef BUILD_EMBEDDED
     #include <string.h>
 #else
     #include <iostream>
@@ -36,6 +34,7 @@ namespace jgLedCube {
             memset(dataArray, 0, dataArraySize);
         }
 
+        // TODO: Support other hardware configurations
         void setLed(uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b) {
             /* DATA LAYOUT NOTES
              *
@@ -132,7 +131,7 @@ namespace jgLedCube {
         }
 
 
-#ifdef PC_BUILD
+#ifndef BUILD_EMBEDDED
         void printData() {
             for (int _byte_index = 0; _byte_index < dataArraySize; _byte_index++) {
                 uint8_t _byte = dataArray[_byte_index];

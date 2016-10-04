@@ -1,9 +1,11 @@
-///  Stores the id numbers of commands and modes to be shared across all cube implementations
 
-#ifndef JGLEDCUBE_DEFINES_H
-#define JGLEDCUBE_DEFINES_H
+#ifndef JGLEDCUBE_COMMON_DEFINES_H
+#define JGLEDCUBE_COMMON_DEFINES_H
 
-#define LED_CUBE_SERIAL_BAUD 9600
+#define LED_CUBE_COMMAND_PACKET_SIZE 4
+#define LED_CUBE_TRANSPORT_PACKET_SIZE LED_CUBE_COMMAND_PACKET_SIZE + 4
+
+#define LED_CUBE_SERIAL_BAUD 115200
 
 /// ++++++++++ COMMANDS ++++++++++ ///
 #define LED_CUBE_CMD_SET_LED 1
@@ -21,4 +23,4 @@
 /// ++++++++++ MODES ++++++++++ ///
 #define LED_CUBE_MODE_SERIAL_LISTEN 100
 
-#endif //JGLEDCUBE_DEFINES_H
+#endif //JGLEDCUBE_COMMON_DEFINES_H

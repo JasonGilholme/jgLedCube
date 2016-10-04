@@ -3,7 +3,7 @@
 #include <iostream>
 #endif
 
-#include <jgLedCube/core.h>
+#include <jgLedCube/embedded/core.h>
 #include "fade.h"
 
 namespace jgLedCube {
