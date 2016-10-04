@@ -6,14 +6,15 @@
 #   STM32_DEBUG
 
 if [[ "$TRAVIS_BUILD_TYPE" = "TESTS" ]]; then
-    ./install_desktop_deps.sh
+    ./scripts/install_desktop_deps.sh
     mkdir build && cd build
     cmake -DTEST_SERIAL_OUT=/dev/ttyUSB0 -DTEST_SERIAL_IN=/dev/ttyUSB1 ..
     # TODO:  Use socat here to trigger simulate the serial ports
-    make jgLedCube/c_tests;
+    make
+    jgLedCube/c_tests;
 
 elif [[ "$TRAVIS_BUILD_TYPE" = "ARDUINO_DEBUG" ]]; then
-    ./install_embedded_deps.sh
+    ./scripts/install_embedded_deps.sh
     mkdir build && cd build
     cmake -DBUILD_EMBEDDED=TRUE -DTARGET_HARDWARE=ARDUINO -DARDUINO_DEFAULT_BOARD=uno -DHARDWARE_PROGRAM=DEBUG ..;
 fi;
