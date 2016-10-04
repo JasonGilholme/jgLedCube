@@ -10,4 +10,6 @@ env:
   - TRAVIS_BUILD_TYPE=ARDUINO_DEBUG
 
 script:
- - scripts/travis.sh
+ - pwd
+ - ls -la
+ - ./scripts/travis.sh
