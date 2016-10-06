@@ -1,6 +1,5 @@
 /// This is the logic implementation for the serial interface.  This should be completely hardware independent.
 
-#include <iostream>
 #include "serial.h"
 
 
@@ -199,7 +198,6 @@ namespace jgLedCube {
 
                 for (int l = 0; l < 20; ++l) {
                     if (l + offset > 19) {
-                        // std::cout << "about to get something" << std::endl;
                         if (noSerial){
                             tempByte = 0;
                         }else{

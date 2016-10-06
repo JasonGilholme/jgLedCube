@@ -94,9 +94,8 @@ namespace jgLedCube {
         static uint8_t outBuf[1];
 
         boost::asio::io_service io_service;
-        boost::asio::serial_port outSerialPort = boost::asio::serial_port(io_service, LED_CUBE_OUT_SERIAL_PORT);
-        boost::asio::serial_port inSerialPort = boost::asio::serial_port(io_service, LED_CUBE_IN_SERIAL_PORT);
-
+        boost::asio::serial_port outSerialPort(io_service, LED_CUBE_OUT_SERIAL_PORT);
+        boost::asio::serial_port inSerialPort(io_service, LED_CUBE_IN_SERIAL_PORT);
         blocking_reader inReader(inSerialPort, 50);
 
         void init() {

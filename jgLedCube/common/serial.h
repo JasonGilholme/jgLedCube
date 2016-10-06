@@ -85,6 +85,8 @@ namespace jgLedCube {
         /// Is there serial data available?
         bool serialAvailable();
 
+        void init();
+
         /// TODO:  move to embedded?
 //        void processCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
     }

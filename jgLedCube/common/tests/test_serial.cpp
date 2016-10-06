@@ -207,6 +207,8 @@ TEST(Serial, TransportCodec){
 }
 
 TEST(Serial, SendReceive) {
+    jgLedCube::serial::init();
+
     // init buffers
     uint8_t outCommand[LED_CUBE_COMMAND_PACKET_SIZE];
     uint8_t outTransport[LED_CUBE_TRANSPORT_PACKET_SIZE];
