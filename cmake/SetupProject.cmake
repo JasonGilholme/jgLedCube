@@ -45,6 +45,13 @@ else()
     set( CUBE_SIZE_Z 4)
     set( CUBE_N_COLOURS 3)
 
+    if  ( DEFINED TEST_SERIAL_OUT AND DEFINED TEST_SERIAL_IN )
+        add_definitions(
+                -DLED_CUBE_IN_SERIAL_PORT="${TEST_SERIAL_IN}"
+                -DLED_CUBE_OUT_SERIAL_PORT="${TEST_SERIAL_OUT}"
+        )
+    endif()
+
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
     # ADD GOOGLE TEST DIRECTORIES
@@ -99,7 +106,6 @@ message( STATUS "CUBE_N_COLOURS: ${CUBE_N_COLOURS}")
 
 # DEFINE ALL THE ARGS FOR THE PRE PROCESSOR
 add_definitions(
-
         -DLED_CUBE_X_DIMENSION=${CUBE_SIZE_X}
         -DLED_CUBE_Y_DIMENSION=${CUBE_SIZE_Y}
         -DLED_CUBE_Z_DIMENSION=${CUBE_SIZE_Z}

@@ -1,5 +1,6 @@
 /// This is the logic implementation for the serial interface.  This should be completely hardware independent.
 
+#include <iostream>
 #include "serial.h"
 
 
@@ -112,7 +113,12 @@ namespace jgLedCube {
         ///   START BYTES       CMD PACKET BYTES     CHECK BYTE   END
         ///  [ SB ] [ SB ]  [ CP[0] ] ... [ CP[N] ]  [ ~CP[0] ]  [ EB ]
         void deconstructTransportPacket(uint8_t inTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE],
-                                        uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){}
+                                        uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){
+            inCmdPacket[0] = inTransportPacket[2];
+            inCmdPacket[1] = inTransportPacket[3];
+            inCmdPacket[2] = inTransportPacket[4];
+            inCmdPacket[3] = inTransportPacket[5];
+        }
 
         void constructTransportPacket(uint8_t outTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE],
                                       uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]){
@@ -128,6 +134,91 @@ namespace jgLedCube {
             outTransportPacket[LED_CUBE_COMMAND_PACKET_SIZE + 2] = ~(uint8_t)outCmdPacket[0];
             // End byte
             outTransportPacket[LED_CUBE_COMMAND_PACKET_SIZE + 3] = transportEB;
+        }
+
+        bool receiveTransportPacket(uint8_t inTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE]) {
+            static uint8_t buffer[20] = {255};  // TODO: Find a better way of doing this init
+            // need to pre fill with serial data to get a valid return from the first shot
+            bool noSerial = false;
+            uint8_t tempByte = 0;
+
+            if (buffer[0] == 255){
+                for (int k = 0; k < 20; ++k) {
+                    if (noSerial){
+                        tempByte = 0;
+
+                    }else{
+                        tempByte = readByte();
+                    }
+
+                    if (tempByte) {
+                        buffer[k] = tempByte;
+                    }
+                    else{
+                        noSerial = true;
+                        buffer[k] = 0;
+                    }
+                }
+            }
+
+            int8_t startIndex = -1;
+            bool foundPacket = false;
+
+            noSerial = false;
+
+            while (!foundPacket and !noSerial) {  /// or serial not available
+
+                /// Identify packet
+                startIndex = -1;
+                for (int i = 0; i < 12; ++i) {
+
+                    if (buffer[i] == transportSB &&
+                        buffer[i + 1] == transportSB &&
+                        buffer[i + 7] == transportEB &&
+                        buffer[i + 6] == (uint8_t) ~buffer[i + 2]) {
+
+                        foundPacket = true;
+                        startIndex = i;
+
+                        for (int j = 0; j < LED_CUBE_TRANSPORT_PACKET_SIZE; j++) {
+                            inTransportPacket[j] = buffer[i + j];
+                            buffer[i + j] = 0;
+                        }
+                        break;
+                    }
+                }
+        
+                /// Slide values along to remove the packet we just grabbed
+                int8_t offset = 19;
+                for (int l = 0; l < 20; ++l) {
+                    if (buffer[l] == 0 && buffer[l + 1] != 0) {
+                        offset = l;
+                        break;
+                    }
+                }
+
+                for (int l = 0; l < 20; ++l) {
+                    if (l + offset > 19) {
+                        // std::cout << "about to get something" << std::endl;
+                        if (noSerial){
+                            tempByte = 0;
+                        }else{
+                            tempByte = jgLedCube::serial::readByte();
+                        }
+
+                        if (tempByte){
+                            buffer[l] = tempByte;
+                        }else{
+                            noSerial = true;
+                            buffer[l] = 0;
+                        }
+
+                    } else {
+                        buffer[l] = buffer[l + offset];
+                    }
+                }
+            }
+            return foundPacket;
         }
     }
 }

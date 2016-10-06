@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 sudo apt-get -qq update
 
@@ -10,5 +11,8 @@ cd /usr/src/gtest
 sudo cmake .
 sudo cmake --build .
 sudo mv libg* /usr/local/lib/
+
+# Socat - serial port virtualisation for testing
+sudo apt-get install socat
 
 cd -

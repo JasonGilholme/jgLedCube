@@ -3,7 +3,7 @@
 
 #include <jgLedCube/embedded/core.h>
 
-#include <stdint.h>"
+#include <stdint.h>
 
 
 namespace jgLedCube {

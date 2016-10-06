@@ -66,18 +66,27 @@ namespace jgLedCube {
         void encode_getModesReturn();
         void decode_getModesReturn();
 
+
+
+        /// Get the command packet from the transport packet
         void deconstructTransportPacket(uint8_t inTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE],
                                         uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
-
+        /// Put the command packet into the transport packet for shipping
         void constructTransportPacket(uint8_t outTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE],
                                       uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
+        /// Send the transport packet down the serial line
+        void sendTransportPacket(uint8_t outTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE]);
+        /// Read the serial line until a packet is found or no serial data is available
+        bool receiveTransportPacket(uint8_t inTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE]);
 
-        // TODO: Move to embedded?
-        /// ++++++++++ PROCESSING ++++++++++ ///
-        void processCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
-        void receiveCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE],
-                            uint8_t timeoutSeconds);
-        void sendCommand(uint8_t outCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
+        /// Read a byte off the serial line
+        uint8_t readByte();
+
+        /// Is there serial data available?
+        bool serialAvailable();
+
+        /// TODO:  move to embedded?
+//        void processCommand(uint8_t inCmdPacket[LED_CUBE_COMMAND_PACKET_SIZE]);
     }
 }
 

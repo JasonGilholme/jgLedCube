@@ -2,7 +2,7 @@
 #ifndef JGLEDCUBE_ANIM_SWEEP_H
 #define JGLEDCUBE_ANIM_SWEEP_H
 
-#include <stdint.h>"
+#include <stdint.h>
 
 namespace jgLedCube {
     namespace anim {

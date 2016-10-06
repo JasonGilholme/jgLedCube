@@ -6,6 +6,12 @@
 #define LED_CUBE_TRANSPORT_PACKET_SIZE LED_CUBE_COMMAND_PACKET_SIZE + 4
 
 #define LED_CUBE_SERIAL_BAUD 115200
+#ifndef LED_CUBE_IN_SERIAL_PORT
+#define LED_CUBE_IN_SERIAL_PORT "/dev/ttyUSB"
+#endif
+#ifndef LED_CUBE_OUT_SERIAL_PORT
+#define LED_CUBE_OUT_SERIAL_PORT "/dev/ttyUSB0"
+#endif
 
 /// ++++++++++ COMMANDS ++++++++++ ///
 #define LED_CUBE_CMD_SET_LED 1
