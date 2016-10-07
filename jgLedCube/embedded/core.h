@@ -4,6 +4,7 @@
 #define JGLEDCUBE_EMBEDDED_CORE_H
 
 #include <jgLedCube/embedded/defines.h>
+//#include <jgLedCube/embedded/hardware.h>
 
 #include <stdint.h>
 
@@ -45,6 +46,42 @@ namespace jgLedCube {
         void hwPushByte(uint8_t data);
         void hwPreRedraw();
         void hwPostRedraw();
+
+        // LUT FOR MAPPING LED IDS ONTO THE MODULAR COLUMN BOARD
+        // TODO: Fill out these numbers based on the hardware
+        static const uint8_t ledIdLut[24] = {
+                0,      /// 0,
+                1,      /// 1,      x1, y1
+                2,      /// 2,
+
+                3,      /// 3,
+                4,      /// 4,      x2, y1
+                5,      /// 5,
+
+                6,      /// 6,
+                7,      /// 7,      x3, y1
+                8,      /// 8,
+
+                9,      /// 9,
+                10,     /// 10,     x4, y1
+                11,     /// 11,
+
+                12,     /// 12,
+                13,     /// 13,     x1, y2
+                14,     /// 14,
+
+                15,     /// 15,
+                16,     /// 16,     x2, y2
+                17,     /// 17,
+
+                18,     /// 18,
+                19,     /// 19,     x3, y2
+                20,     /// 20,
+
+                21,     /// 21,
+                22,     /// 22,     x4, y2
+                23,     /// 23,
+        };
     }
 }
 

@@ -37,102 +37,90 @@ namespace jgLedCube {
             memset(dataArray, 255, dataArraySize);
         }
 
-        // TODO: Support other hardware configurations
         void setLed(uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b) {
-            /* DATA LAYOUT NOTES
-             *
-             * Each bit represents the state of a single channel of a single led.
-             * Progresses from (1,1,1) through x, y, then z. This is then repeated
-             * for each modulation bit. e.g:
-             *
-             * Channel: R,G,B R,G,B ... R,G,B R,G,B -> Next Modulation Block
-             * Co-Ord:  1,1,1 2,1,1 ... 3,4,4 4,4,4
-             *
-             * This is ultimately defined by the hardware configuration.
-             * An alternative is to handle the channels separately, and do R111 -> R444,
-             * then B111 -> B444 etc. This is then repeated for each modulation bit as well.
-             *
-             * */
-            static uint16_t led_id = 0;
+            uint16_t zOffset = (z - 1) * LED_CUBE_XY_DIMENSION;
+            uint16_t xy_id = (((y - 1) * LED_CUBE_X_DIMENSION) + x - 1) * LED_CUBE_N_CHANNELS;
+
+            uint8_t boardNum = xy_id / 24;
+            uint16_t boardOffset = 24 * boardNum;
+
+            uint8_t rId = xy_id - boardOffset;
+            uint8_t gId = rId + 1;
+            uint8_t bId = gId + 1;
+
+            // translate boardID using lut and translate it back where it should be
+            rId = ledIdLut[rId] + boardOffset + zOffset;
+            gId = ledIdLut[gId] + boardOffset + zOffset;
+            bId = ledIdLut[bId] + boardOffset + zOffset;
+
             static uint8_t byte_id = 0;
             static uint8_t bit_id = 0;
 
-            led_id = (((z - 1) * LED_CUBE_XY_DIMENSION) + (((y - 1) * LED_CUBE_X_DIMENSION)) + x - 1) * LED_CUBE_N_CHANNELS;
-            byte_id = led_id  / 8;
-            bit_id = led_id % 8;
+            byte_id = rId  / 8;
+            bit_id = rId % 8;
 
             setBit(dataArray[byte_id], bit_id, getBit(r, 0));
             setBit(dataArray[byte_id + modBlockSize], bit_id, getBit(r, 1));
             setBit(dataArray[byte_id + modBlockSize_x2], bit_id, getBit(r, 2));
             setBit(dataArray[byte_id + modBlockSize_x3], bit_id, getBit(r, 3));
 
-            #if LED_CUBE_N_CHANNELS >= 2
-            bit_id++;
-            if (bit_id == 8){
-                byte_id++;
-                bit_id=0;
-            }
+            byte_id = gId  / 8;
+            bit_id = gId % 8;
             setBit(dataArray[byte_id], bit_id, getBit(g, 0));
             setBit(dataArray[byte_id + modBlockSize], bit_id, getBit(g, 1));
-            setBit(dataArray[byte_id + (modBlockSize * 2)], bit_id, getBit(g, 2));
-            setBit(dataArray[byte_id + (modBlockSize * 3)], bit_id, getBit(g, 3));
-            #endif
+            setBit(dataArray[byte_id + modBlockSize_x2], bit_id, getBit(g, 2));
+            setBit(dataArray[byte_id + modBlockSize_x3], bit_id, getBit(g, 3));
 
-            #if LED_CUBE_N_CHANNELS >= 3
-            bit_id++;
-            if (bit_id == 8){
-                byte_id++;
-                bit_id=0;
-            }
+            byte_id = bId  / 8;
+            bit_id = bId % 8;
             setBit(dataArray[byte_id], bit_id, getBit(b, 0));
             setBit(dataArray[byte_id + modBlockSize], bit_id, getBit(b, 1));
             setBit(dataArray[byte_id + modBlockSize_x2], bit_id, getBit(b, 2));
             setBit(dataArray[byte_id + modBlockSize_x3], bit_id, getBit(b, 3));
-            #endif
         }
 
         void getLed(uint8_t x, uint8_t y, uint8_t z, uint8_t &r, uint8_t &g, uint8_t &b){
-            static uint16_t led_id = 0;
+            uint16_t zOffset = (z - 1) * LED_CUBE_XY_DIMENSION;
+            uint16_t xy_id = (((y - 1) * LED_CUBE_X_DIMENSION) + x - 1) * LED_CUBE_N_CHANNELS;
+
+            uint8_t boardNum = xy_id / 24;
+            uint16_t boardOffset = 24 * boardNum;
+
+            uint8_t rId = xy_id - boardOffset;
+            uint8_t gId = rId + 1;
+            uint8_t bId = gId + 1;
+
+            // translate boardID using lut and translate it back where it should be
+            rId = ledIdLut[rId] + boardOffset + zOffset;
+            gId = ledIdLut[gId] + boardOffset + zOffset;
+            bId = ledIdLut[bId] + boardOffset + zOffset;
+
             static uint8_t byte_id = 0;
             static uint8_t bit_id = 0;
 
-            led_id = (((z - 1) * LED_CUBE_XY_DIMENSION) + (((y - 1) * LED_CUBE_X_DIMENSION)) + x - 1) * LED_CUBE_N_CHANNELS;
-            byte_id = led_id  / 8;
-            bit_id = led_id % 8;
-
+            byte_id = rId  / 8;
+            bit_id = rId % 8;
             r = 0;
             setBit(r, 0, getBit(dataArray[byte_id], bit_id));
             setBit(r, 1, getBit(dataArray[byte_id + modBlockSize], bit_id));
             setBit(r, 2, getBit(dataArray[byte_id + modBlockSize_x2], bit_id));
             setBit(r, 3, getBit(dataArray[byte_id + modBlockSize_x3], bit_id));
 
-            #if LED_CUBE_N_CHANNELS >= 2
-            bit_id++;
-            if (bit_id == 8){
-                byte_id++;
-                bit_id=0;
-            }
-
+            byte_id = gId  / 8;
+            bit_id = gId % 8;
             g = 0;
             setBit(g, 0, getBit(dataArray[byte_id], bit_id));
             setBit(g, 1, getBit(dataArray[byte_id + modBlockSize], bit_id));
             setBit(g, 2, getBit(dataArray[byte_id + modBlockSize_x2], bit_id));
             setBit(g, 3, getBit(dataArray[byte_id + modBlockSize_x3], bit_id));
-            #endif
 
-            #if LED_CUBE_N_CHANNELS >= 3
-            bit_id++;
-            if (bit_id == 8){
-                byte_id++;
-                bit_id=0;
-            }
-
+            byte_id = bId  / 8;
+            bit_id = bId % 8;
             b = 0;
             setBit(b, 0, getBit(dataArray[byte_id], bit_id));
             setBit(b, 1, getBit(dataArray[byte_id + modBlockSize], bit_id));
             setBit(b, 2, getBit(dataArray[byte_id + modBlockSize_x2], bit_id));
             setBit(b, 3, getBit(dataArray[byte_id + modBlockSize_x3], bit_id));
-            #endif
         }
 
         #if !BUILD_EMBEDDED /// Altered signature for testing purposes
