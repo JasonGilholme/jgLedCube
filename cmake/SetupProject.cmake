@@ -2,7 +2,7 @@
 include_directories(${CMAKE_SOURCE_DIR})
 
 
-if ( ${BUILD_EMBEDDED} )
+if ( DEFINED BUILD_EMBEDDED )
 
     add_definitions(
             -DTARGET_HARDWARE=${TARGET_HARDWARE}
@@ -35,8 +35,6 @@ if ( ${BUILD_EMBEDDED} )
         SET(STM32_LINKER_SCRIPT ${CMSIS_LINKER_SCRIPT})
 
     endif()
-
-    project(jgLedCube)
 
 else()
 

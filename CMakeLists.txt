@@ -32,5 +32,7 @@ endif()
 
 include(cmake/SetupProject.cmake)
 
+project(jgLedCube)
+
 # START TO ADD ALL THE COMPONENTS OF THE PROJECT
 add_subdirectory(jgLedCube)
