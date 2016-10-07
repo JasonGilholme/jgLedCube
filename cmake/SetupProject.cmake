@@ -36,7 +36,11 @@ if ( ${BUILD_EMBEDDED} )
 
     endif()
 
+    project(jgLedCube)
+
 else()
+
+    project(jgLedCube)
 
     # FORCE CUBE SPECS FOR TESTING PURPOSES
     set( CUBE_NAME "TestLedCube" )
@@ -59,8 +63,15 @@ else()
     include_directories( $ENV{REZ_GOOGLETEST_ROOT}/include )
     link_directories( $ENV{REZ_GOOGLETEST_ROOT}/lib )
 
-    include_directories( $ENV{REZ_PYTHON_ROOT}/include/python2.7 )
-    link_directories( $ENV{REZ_PYTHON_ROOT}/lib )
+    # FIND BOOST
+    find_package(Boost COMPONENTS python system REQUIRED)
+    include_directories(${Boost_INCLUDE_DIR})
+    link_directories(${Boost_LIBRARY_DIR_RELEASE})
+
+    # FIND PYTHON
+    find_package(PythonLibs REQUIRED)
+    include_directories(${PYTHON_INCLUDE_DIRS})
+    link_directories(${PYTHON_LIBRARIES})
 
 endif()
 
