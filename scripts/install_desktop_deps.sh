@@ -5,6 +5,9 @@ sudo apt-get -qq update
 # Boost
 sudo apt-get install libboost1.55-all-dev
 
+# Python Dev
+sudo apt-get install python-dev
+
 # GoogleTest
 sudo apt-get install -y libgtest-dev
 cd /usr/src/gtest
