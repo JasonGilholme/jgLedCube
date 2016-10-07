@@ -73,15 +73,9 @@ TEST(Core, GetBit) {
     EXPECT_EQ(0, jgLedCube::core::getBit(17, 7));
 }
 
-TEST(Core, Clear) {
+TEST(Core, ClearAndFlood) {
     // Flood the array
-    for (uint8_t z=1; z <= LED_CUBE_Z_DIMENSION; z++){
-        for (uint8_t y=1; y <= LED_CUBE_Y_DIMENSION; y++){
-            for (uint8_t x=1; x <= LED_CUBE_X_DIMENSION; x++){
-                jgLedCube::core::setLed(x, y, z, 15, 15, 15);
-            }
-        }
-    }
+    jgLedCube::core::flood();
 
     // Make sure they're all 1
     for (uint16_t i = 0; i < LED_CUBE_DATA_ARRAY_SIZE; i++){
@@ -198,6 +192,162 @@ TEST(Core, Modulation) {
                     break;
                 default :
                     EXPECT_EQ(array_bit, 0);
+            }
+        }
+    }
+}
+
+TEST(Core, Redraw) {
+    jgLedCube::core::clear();
+
+    /// Set some LED's to test with.
+    jgLedCube::core::setLed(1, 1, 1, 8, 4, 2);
+    jgLedCube::core::setLed(4, 4, 4, 15, 1, 1);
+
+    uint8_t sentDataSize = LED_CUBE_MODULATION_BLOCK_SIZE / LED_CUBE_Z_DIMENSION;
+
+    /// Note: core::redraw() only accepts the sentData arg when built for testing
+    uint8_t sentData[sentDataSize];
+
+    uint8_t modCycle;
+    uint8_t z;
+    uint8_t zByte;
+    uint16_t modOffset;
+
+    int i = 0;
+
+    for (; i < 1500; ++i) {
+        modCycle = jgLedCube::core::curr_modCycle;
+        z = jgLedCube::core::curr_z;
+
+        /// Push the data out
+        jgLedCube::core::redraw(sentData);
+
+        /// Make sure the right mod bits are set for the given co-ords and values
+        if (z == 1) {
+            /// x, y, z, r, g, b = 1, 1, 1, 8, 4, 2
+            if (modCycle == 0) {
+                /// Should all be off because none of the r, g, b values require the first bit
+                for (int k = 0; k < sentDataSize; ++k) {
+                    EXPECT_EQ(sentData[k], 0);
+                }
+            }
+            if (modCycle == 2) { /// The 2nd modulation bit - only the Blue channel should be on
+                for (int k = 0; k < sentDataSize; ++k) {
+                    if (k == 5){   /// It's the last byte in the packet because we push the data out backwards
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 0), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 1), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 2), 1);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 3), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 4), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 5), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 6), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 7), 0);
+                    }else{
+                        EXPECT_EQ(sentData[k], 0);
+                    }
+                }
+            }
+            if (modCycle == 4) { /// The 3rd modulation bit - only the Green channel should be on
+                for (int k = 0; k < sentDataSize; ++k) {
+                    if (k == 5){
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 0), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 1), 1);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 2), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 3), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 4), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 5), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 6), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 7), 0);
+                    }else{
+                        EXPECT_EQ(sentData[k], 0);
+                    }
+                }
+            }
+            if (modCycle == 8) {  /// The 4th modulation bit - only the Red channel should be on
+                for (int k = 0; k < sentDataSize; ++k) {
+                    if (k == 5){
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 0), 1);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 1), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 2), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 3), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 4), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 5), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 6), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 7), 0);
+                    }else{
+                        EXPECT_EQ(sentData[k], 0);
+                    }
+                }
+            }
+        }
+
+        if (z == 4) {
+            /// x, y, z, r, g, b = 4, 4, 4, 15, 1, 1
+            /// RGB will be the last 3 bits in the first byte that goes out.
+            if (modCycle == 0) { /// The 1st modulation but.  Green and Blue should only have the first bit, Red should have all of them
+                for (int k = 0; k < sentDataSize; ++k) {
+                    if (k == 0){   /// It's the first byte in the packet because we push the data out backwards
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 0), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 1), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 2), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 3), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 4), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 5), 1);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 6), 1);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 7), 1);
+                    }else{
+                        EXPECT_EQ(sentData[k], 0);
+                    }
+                }
+            }
+            if (modCycle == 2) { /// The 2nd modulation bit - only the Red channel should be on
+                for (int k = 0; k < sentDataSize; ++k) {
+                    if (k == 0){
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 0), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 1), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 2), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 3), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 4), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 5), 1);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 6), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 7), 0);
+                    }else{
+                        EXPECT_EQ(sentData[k], 0);
+                    }
+                }
+            }
+            if (modCycle == 4) { /// The 3rd modulation bit - only the Green channel should be on
+                for (int k = 0; k < sentDataSize; ++k) {
+                    if (k == 0){
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 0), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 1), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 2), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 3), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 4), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 5), 1);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 6), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 7), 0);
+                    }else{
+                        EXPECT_EQ(sentData[k], 0);
+                    }
+                }
+            }
+            if (modCycle == 8) {  /// The 4th modulation bit - only the Red channel should be on
+                for (int k = 0; k < sentDataSize; ++k) {
+                    if (k == 0){
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 0), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 1), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 2), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 3), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 4), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 5), 1);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 6), 0);
+                        EXPECT_EQ(jgLedCube::core::getBit(sentData[k], 7), 0);
+                    }else{
+                        EXPECT_EQ(sentData[k], 0);
+                    }
+                }
             }
         }
     }

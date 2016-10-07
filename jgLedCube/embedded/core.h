@@ -7,37 +7,44 @@
 
 #include <stdint.h>
 
-// TODO: Could this be all header? and make use of inline functions - this will be high frequency.
-
 namespace jgLedCube {
     namespace core {
-        // CUBE IDENTIFICATION
-        extern const char* cubeName;
-        extern const double cubeUid;
-        extern const double cubeVersion;
-
-        // CUBE CONFIGURATION
-        extern const uint8_t xDimension;
-        extern const uint8_t yDimension;
-        extern const uint8_t zDimension;
-        extern const uint8_t nChannels;
 
         // THE MAIN DATA ARRAY
         extern uint8_t dataArray[];
 
+        #if !BUILD_EMBEDDED  /// Expose some internal vars for testing
+        extern uint8_t curr_modCycle;
+        extern uint8_t curr_z;
+        extern uint8_t curr_zByte;
+        extern uint16_t curr_modOffset;
+        #endif
+
         // KEY FUNCTIONS FOR SETTING DATA ON THE CUBE
         void setLed(uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b);
-        void setLedFloat(float x, float y, float z, uint8_t r, uint8_t g, uint8_t b);
-        void clear();
         void getLed(uint8_t x, uint8_t y, uint8_t z, uint8_t &r, uint8_t &g, uint8_t &b);
+        void clear();
+        void flood();
 
-        // GET & SET BITS IN A BYTE
-        void setBit(uint8_t &b, const uint8_t &n, const uint8_t &v);
-        uint8_t getBit(uint8_t b, uint8_t n);
+        // REDRAW DATA ON THE CUBE - CALLED REPEATEDLY VIA A HARDWARE INTERRUPT
+        #if !BUILD_EMBEDDED  /// Atlered redraw() signature for testing
+        void redraw(uint8_t sendData[]);  /// LED_CUBE_MODULATION_BLOCK_SIZE
+        #else
+        void redraw();
+        #endif
 
-        // DEBUG PRINTS
-        void printConfig();
-        void printData();
+        // BIT GETTER AND SETTER
+        inline void setBit(uint8_t &b, const uint8_t &n, const uint8_t &v) {
+            b ^= (-v ^ b) & (1 << n);
+        }
+        uint8_t inline getBit(const uint8_t &b, const uint8_t &n) {
+            return (b >> n) & (uint8_t)1;
+        }
+
+        /// Hardware Specific Functions
+        void hwPushByte(uint8_t data);
+        void hwPreRedraw();
+        void hwPostRedraw();
     }
 }
 

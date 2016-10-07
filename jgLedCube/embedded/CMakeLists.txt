@@ -32,7 +32,8 @@ if ( ${BUILD_EMBEDDED} )
 else()
 
     # BUILD AND TEST THE LIBS
-    add_library(jgLedCubeCore core.cpp)
+    add_library(jgLedCubeCore core.cpp core_desktop.cpp)
+
     add_library(jgLedCubeSerialEmbedded serial.cpp)
     target_link_libraries(jgLedCubeSerialEmbedded jgLedCubeSerial)
 
