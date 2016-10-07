@@ -38,27 +38,35 @@ namespace jgLedCube {
         }
 
         void setLed(uint8_t x, uint8_t y, uint8_t z, uint8_t r, uint8_t g, uint8_t b) {
-            uint16_t zOffset = (z - 1) * LED_CUBE_XY_DIMENSION;
-            uint16_t xy_id = (((y - 1) * LED_CUBE_X_DIMENSION) + x - 1) * LED_CUBE_N_CHANNELS;
+            static uint8_t byte_id;
+            static uint8_t bit_id;
 
-            uint8_t boardNum = xy_id / 24;
-            uint16_t boardOffset = 24 * boardNum;
+            static uint16_t xy_id;
+            static uint16_t zOffset;
+            static uint8_t boardNum;
+            static uint16_t boardOffset;
 
-            uint8_t rId = xy_id - boardOffset;
-            uint8_t gId = rId + 1;
-            uint8_t bId = gId + 1;
+            static uint8_t rId;
+            static uint8_t gId;
+            static uint8_t bId;
+
+            zOffset = (z - 1) * LED_CUBE_XY_DIMENSION;
+            xy_id = (((y - 1) * LED_CUBE_X_DIMENSION) + x - 1) * LED_CUBE_N_CHANNELS;
+
+            boardNum = xy_id / 24;
+            boardOffset = 24 * boardNum;
+
+            rId = xy_id - boardOffset;
+            gId = rId + 1;
+            bId = gId + 1;
 
             // translate boardID using lut and translate it back where it should be
             rId = ledIdLut[rId] + boardOffset + zOffset;
             gId = ledIdLut[gId] + boardOffset + zOffset;
             bId = ledIdLut[bId] + boardOffset + zOffset;
 
-            static uint8_t byte_id = 0;
-            static uint8_t bit_id = 0;
-
             byte_id = rId  / 8;
             bit_id = rId % 8;
-
             setBit(dataArray[byte_id], bit_id, getBit(r, 0));
             setBit(dataArray[byte_id + modBlockSize], bit_id, getBit(r, 1));
             setBit(dataArray[byte_id + modBlockSize_x2], bit_id, getBit(r, 2));
@@ -80,23 +88,32 @@ namespace jgLedCube {
         }
 
         void getLed(uint8_t x, uint8_t y, uint8_t z, uint8_t &r, uint8_t &g, uint8_t &b){
-            uint16_t zOffset = (z - 1) * LED_CUBE_XY_DIMENSION;
-            uint16_t xy_id = (((y - 1) * LED_CUBE_X_DIMENSION) + x - 1) * LED_CUBE_N_CHANNELS;
+            static uint8_t byte_id;
+            static uint8_t bit_id;
 
-            uint8_t boardNum = xy_id / 24;
-            uint16_t boardOffset = 24 * boardNum;
+            static uint16_t xy_id;
+            static uint16_t zOffset;
+            static uint8_t boardNum;
+            static uint16_t boardOffset;
 
-            uint8_t rId = xy_id - boardOffset;
-            uint8_t gId = rId + 1;
-            uint8_t bId = gId + 1;
+            static uint8_t rId;
+            static uint8_t gId;
+            static uint8_t bId;
+
+            zOffset = (z - 1) * LED_CUBE_XY_DIMENSION;
+            xy_id = (((y - 1) * LED_CUBE_X_DIMENSION) + x - 1) * LED_CUBE_N_CHANNELS;
+
+            boardNum = xy_id / 24;
+            boardOffset = 24 * boardNum;
+
+            rId = xy_id - boardOffset;
+            gId = rId + 1;
+            bId = gId + 1;
 
             // translate boardID using lut and translate it back where it should be
             rId = ledIdLut[rId] + boardOffset + zOffset;
             gId = ledIdLut[gId] + boardOffset + zOffset;
             bId = ledIdLut[bId] + boardOffset + zOffset;
-
-            static uint8_t byte_id = 0;
-            static uint8_t bit_id = 0;
 
             byte_id = rId  / 8;
             bit_id = rId % 8;
