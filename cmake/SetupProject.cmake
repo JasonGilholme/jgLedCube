@@ -59,6 +59,8 @@ else()
     include_directories( $ENV{REZ_GOOGLETEST_ROOT}/include )
     link_directories( $ENV{REZ_GOOGLETEST_ROOT}/lib )
 
+    include_directories( $ENV{REZ_PYTHON_ROOT}/include/python2.7 )
+    link_directories( $ENV{REZ_PYTHON_ROOT}/lib )
 
 endif()
 

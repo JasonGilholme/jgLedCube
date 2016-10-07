@@ -16,8 +16,12 @@ if ( ${BUILD_EMBEDDED} )
 else()
 
     # BUILD AND TEST THE LIBS
-    add_library(jgLedCubeSerial serial.cpp serial_desktop.cpp)
-    target_link_libraries(jgLedCubeSerial boost_system)
+    add_library( jgLedCubeSerial SHARED serial.cpp serial_desktop.cpp )
+    target_link_libraries( jgLedCubeSerial boost_system )
+
+    add_library( _jgLedCubeSerial SHARED wrap_serial.cpp )
+    target_link_libraries( _jgLedCubeSerial jgLedCubeSerial boost_python )
+    set_target_properties( _jgLedCubeSerial PROPERTIES PREFIX "")
 
     add_subdirectory( tests )
 
