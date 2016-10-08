@@ -3,7 +3,7 @@ import unittest
 import jgLedCube
 
 
-class TestStringMethods(unittest.TestCase):
+class TestSerial(unittest.TestCase):
 
     def test_encode_clear(self):
         clear_cmd = jgLedCube.serial.encode_clear()
