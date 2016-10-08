@@ -67,7 +67,7 @@ else()
     link_directories(${Boost_LIBRARY_DIR_RELEASE})
 
     # FIND PYTHON
-    find_package(PythonLibs REQUIRED)
+    find_package(PythonLibs 2.7 REQUIRED)
     include_directories(${PYTHON_INCLUDE_DIRS})
     link_directories(${PYTHON_LIBRARIES})
 
