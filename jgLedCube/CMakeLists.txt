@@ -6,14 +6,15 @@ define_property(GLOBAL PROPERTY TEST_LIBS BRIEF_DOCS "Global list of test libs" 
 add_subdirectory(common)
 #add_subdirectory(desktop)
 add_subdirectory(embedded)
-
+add_subdirectory(python)
 
 if ( NOT DEFINED BUILD_EMBEDDED )
 
     get_property(_TEST_SOURCES GLOBAL PROPERTY TEST_SOURCES)
     get_property(_TEST_LIBS GLOBAL PROPERTY TEST_LIBS)
 
-    add_executable( c_tests test.cpp ${_TEST_SOURCES} )
-    target_link_libraries( c_tests ${_TEST_LIBS} gtest pthread )
+    add_executable( gtests test.cpp ${_TEST_SOURCES} )
+    target_link_libraries( gtests ${_TEST_LIBS} gtest pthread )
+    install( TARGETS gtests DESTINATION bin )
 
 endif()

@@ -10,11 +10,12 @@
 namespace jgLedCube {
     namespace serial {
 
+        const uint8_t transportSB = 85;
+        const uint8_t transportEB = 170;
+
         extern uint8_t transportOutBytes[LED_CUBE_TRANSPORT_PACKET_SIZE];
         extern uint8_t encodeCommandPacket[LED_CUBE_COMMAND_PACKET_SIZE];
         extern uint8_t decodeCommandPacket[LED_CUBE_COMMAND_PACKET_SIZE];
-        extern const uint8_t transportSB;
-        extern const uint8_t transportEB;
 
         /// ================================================= ///
         ///                      LOGIC                        ///
@@ -65,8 +66,6 @@ namespace jgLedCube {
         void decode_getModes();
         void encode_getModesReturn();
         void decode_getModesReturn();
-
-
 
         /// Get the command packet from the transport packet
         void deconstructTransportPacket(uint8_t inTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE],

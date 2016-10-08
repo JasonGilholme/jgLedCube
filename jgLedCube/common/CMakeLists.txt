@@ -15,13 +15,13 @@ if ( ${BUILD_EMBEDDED} )
     endif()
 else()
 
-    # BUILD AND TEST THE LIBS
-    add_library( jgLedCubeSerial SHARED serial.cpp serial_desktop.cpp )
-    target_link_libraries( jgLedCubeSerial boost_system )
+    add_library( jgLedCubeSerial serial.cpp )
+    target_link_libraries( jgLedCubeSerial )
 
-    add_library( _jgLedCubeSerial SHARED wrap_serial.cpp )
-    target_link_libraries( _jgLedCubeSerial jgLedCubeSerial boost_python )
-    set_target_properties( _jgLedCubeSerial PROPERTIES PREFIX "")
+    add_library( jgLedCubeSerialDesktop serial_desktop.cpp )
+    target_link_libraries( jgLedCubeSerialDesktop jgLedCubeSerial boost_system )
+
+    install( TARGETS jgLedCubeSerial jgLedCubeSerialDesktop ARCHIVE DESTINATION lib)
 
     add_subdirectory( tests )
 

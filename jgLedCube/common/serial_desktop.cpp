@@ -1,5 +1,7 @@
 
 #include <jgLedCube/common/defines.h>
+#include <jgLedCube/common/serial.h>
+
 #include <boost/asio/serial_port.hpp>
 #include <boost/asio/deadline_timer.hpp>
 #include <boost/asio.hpp>
@@ -87,7 +89,7 @@ public:
 };
 
 
-
+/// TODO: Support arbitrary serial port locations and pass in the cmake definition for testing only
 namespace jgLedCube {
     namespace serial {
 
@@ -118,5 +120,92 @@ namespace jgLedCube {
             inReader.read_char(inBuf);
             return (uint8_t)inBuf;
         };
+
+
+        bool receiveTransportPacket(uint8_t inTransportPacket[LED_CUBE_TRANSPORT_PACKET_SIZE]) {
+            static uint8_t buffer[20] = {255};  // TODO: Find a better way of doing this init
+            // need to pre fill with serial data to get a valid return from the first shot
+            bool noSerial = false;
+            uint8_t tempByte = 0;
+
+            if (buffer[0] == 255){
+                for (int k = 0; k < 20; ++k) {
+                    if (noSerial){
+                        tempByte = 0;
+
+                    }else{
+                        tempByte = readByte();
+                    }
+
+                    if (tempByte) {
+                        buffer[k] = tempByte;
+                    }
+                    else{
+                        noSerial = true;
+                        buffer[k] = 0;
+                    }
+                }
+            }
+
+            int8_t startIndex = -1;
+            bool foundPacket = false;
+
+            noSerial = false;
+
+            while (!foundPacket and !noSerial) {  /// or serial not available
+
+                /// Identify packet
+                startIndex = -1;
+                for (int i = 0; i < 12; ++i) {
+
+                    if (buffer[i] == jgLedCube::serial::transportSB &&
+                        buffer[i + 1] == jgLedCube::serial::transportSB &&
+                        buffer[i + 7] == jgLedCube::serial::transportEB &&
+                        buffer[i + 6] == (uint8_t) ~buffer[i + 2]) {
+
+                        foundPacket = true;
+                        startIndex = i;
+
+                        for (int j = 0; j < LED_CUBE_TRANSPORT_PACKET_SIZE; j++) {
+                            inTransportPacket[j] = buffer[i + j];
+                            buffer[i + j] = 0;
+                        }
+                        break;
+                    }
+                }
+
+                /// Slide values along to remove the packet we just grabbed
+                int8_t offset = 19;
+                for (int l = 0; l < 20; ++l) {
+                    if (buffer[l] == 0 && buffer[l + 1] != 0) {
+                        offset = l;
+                        break;
+                    }
+                }
+
+                for (int l = 0; l < 20; ++l) {
+                    if (l + offset > 19) {
+                        if (noSerial){
+                            tempByte = 0;
+                        }else{
+                            tempByte = jgLedCube::serial::readByte();
+                        }
+
+                        if (tempByte){
+                            buffer[l] = tempByte;
+                        }else{
+                            noSerial = true;
+                            buffer[l] = 0;
+                        }
+
+                    } else {
+                        buffer[l] = buffer[l + offset];
+                    }
+                }
+            }
+            return foundPacket;
+        }
+
+
     }
 }
