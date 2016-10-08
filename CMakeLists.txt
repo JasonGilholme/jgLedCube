@@ -23,6 +23,12 @@ else()
             if ( NOT DEFINED STM32_CHIP )
                 message( FATAL_ERROR "STM32_CHIP variable not defined!" )
             endif()
+        elseif( TARGET_HARDWARE STREQUAL ANDROID )
+            # TODO: CHECK FOR REQUIRED ANDROID VARS HERE
+
+            set( ANDROID_NDK "/mnt/library/ANDROID/android-sdk-linux/platform-tools" )
+            set( ANDROID_ABI "armeabi-v7a with NEON" )
+
         else()
             message( FATAL_ERROR "Invalid value for TARGET_HARDWARE!" )
         endif()
