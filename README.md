@@ -1,10 +1,9 @@
-[![Build Status](https://travis-ci.org/JasonGilholme/jgLedCube.png)](https://travis-ci.org/JasonGilholme/jgLedCube)
+<a href="https://travis-ci.org/JasonGilholme/jgLedCube"><img src="https://travis-ci.org/JasonGilholme/jgLedCube.png" align="left"></a><img src="images/opensource.png" width="120" align="right">
+
 
 ## jgLedCube
 
 Open source software and hardware for creating an LED Cube.
-
-<img src="images/opensource.png" width="200">
 
 
 ### Software
