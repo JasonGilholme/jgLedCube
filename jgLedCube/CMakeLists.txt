@@ -13,7 +13,7 @@ if ( NOT DEFINED BUILD_EMBEDDED )
     get_property(_TEST_LIBS GLOBAL PROPERTY TEST_LIBS)
 
     add_executable( gtests test.cpp ${_TEST_SOURCES} )
-    target_link_libraries( gtests ${_TEST_LIBS} gtest pthread )
+    target_link_libraries( gtests ${_TEST_LIBS} ${GTEST_LIBRARY} pthread )
     install( TARGETS gtests DESTINATION bin )
 
     add_subdirectory(python)

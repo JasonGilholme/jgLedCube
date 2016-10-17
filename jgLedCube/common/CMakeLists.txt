@@ -19,7 +19,7 @@ else()
     target_link_libraries( jgLedCubeSerial )
 
     add_library( jgLedCubeSerialDesktop serial_desktop.cpp )
-    target_link_libraries( jgLedCubeSerialDesktop jgLedCubeSerial boost_system )
+    target_link_libraries( jgLedCubeSerialDesktop jgLedCubeSerial ${Boost_SYSTEM_LIBRARY_RELEASE} )
 
     install( TARGETS jgLedCubeSerial jgLedCubeSerialDesktop ARCHIVE DESTINATION lib)
 

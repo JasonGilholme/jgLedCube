@@ -34,6 +34,11 @@ if ( DEFINED BUILD_EMBEDDED )
 
         SET(STM32_LINKER_SCRIPT ${CMSIS_LINKER_SCRIPT})
 
+    elseif ( TARGET_HARDWARE STREQUAL ANDROID )
+
+        set( CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/android_toolchain/android.toolchain.cmake )
+
+
     endif()
 
 else()
@@ -57,19 +62,16 @@ else()
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
     # ADD GOOGLE TEST DIRECTORIES
-    # TODO: FindGoogletest.cmake??
-    include_directories( $ENV{REZ_GOOGLETEST_ROOT}/include )
-    link_directories( $ENV{REZ_GOOGLETEST_ROOT}/lib )
+    find_package(GTest REQUIRED )
+    include_directories( ${GTEST_INCLUDE_DIRS} )
 
     # FIND BOOST
     find_package(Boost COMPONENTS python system REQUIRED)
     include_directories(${Boost_INCLUDE_DIR})
-    link_directories(${Boost_LIBRARY_DIR_RELEASE})
 
     # FIND PYTHON
     find_package(PythonLibs 2.7 REQUIRED)
     include_directories(${PYTHON_INCLUDE_DIRS})
-    link_directories(${PYTHON_LIBRARIES})
 
 endif()
 
