@@ -1,42 +1,32 @@
-[![Build Status](https://travis-ci.org/JasonGilholme/jgLedCube-embedded.png)](https://travis-ci.org/JasonGilholme/jgLedCube-embedded)
+[![Build Status](https://travis-ci.org/JasonGilholme/jgLedCube.png)](https://travis-ci.org/JasonGilholme/jgLedCube)
 
-## jgLedCube-embedded
+## jgLedCube
 
-Check out the .travis.yml file for dependencies.
+Open source software and hardware for creating an LED Cube.
 
-TO BUILD AN ARDUINO TARGET
-
-    -DBUILD_EMBEDDED=TRUE -DTARGET_HARDWARE=ARDUINO -DARDUINO_DEFAULT_BOARD=uno -DHARDWARE_PROGRAM=DEBUG
-
-TO BUILD FOR PC
-
-    -DTEST_SERIAL_PORT=/dev/ttyUSB0
-    
-
-### Configuration CMake options
-
-    -DCUBE_NAME=MyLedCube
-    -DCUBE_SIZE_X=4
-    -DCUBE_SIZE_Y=4
-    -DCUBE_SIZE_Z=4
-    -DCUBE_N_COLOURS=3
-    -DPROGRAM_TO_BUILD=ANIMS
+<img src="images/opensource.png" width="200">
 
 
-### Arduino Specific Notes
+### Software
 
-    -DTARGET_HARDWARE=ARDUINO
-    -DARDUINO_DEFAULT_BOARD=uno
-    -DARDUINO_DEFAULT_PORT=/dev/ttyUSB0
-    -DARDUINO_DEFAULT_PROGRAMMER=usbasp
+The available code is intended to be more of an SDK to allow people to make their cubes do more things and interact with other devices as well. 
 
-    
-### STM32 Specific Notes
+There are two key components to this
 
-    -DTARGET_HARDWARE=STM32
-    -DSTM32_CHIP=STM32F407VG
-    -DSTM32Cube_DIR=/home/jase/STM32Cube/Repository/STM32Cube_FW_F4_V1.13.0
+* core.cpp - This is intended for the cube micro controller and handles how the data is handled and the implementation matches the provided hardware
+* serial.cpp - This represents a standardized interface for sending and recieving data to an LED cube.  This provides higher level functions like set_led() to be used from Android Apps, Desktop programs and other micro controllers.
 
-I needed to get newlib from here:  http://http.us.debian.org/debian/pool/main/libs/libstdc++-arm-none-eabi/libstdc++-arm-none-eabi-newlib_4.9.3+svn227297-1+8_all.deb
-The default std lib from the Ubuntu-14.04 LTS package manager was broken.
 
+### Hardware
+
+The hardware consists of two modular boards which can be daisy chained together.  
+
+The "column control board" acts as a base for the cube and provides 8 columns in a 4x2 arrangement.  This can be used to make arbitrary sized cubes, and shapes that aren't cubes too!
+
+<img src="images/column_control.png" width="400">
+<img src="images/column_control2.png" width="400">
+
+The "level control board" is used for multiplexing the different horizontal layers in the cube. It should be connect after all the column control boards.
+  
+<img src="images/level_control.png" width="400">
+<img src="images/level_control2.png" width="400">  
