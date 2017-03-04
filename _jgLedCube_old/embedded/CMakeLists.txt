@@ -12,7 +12,7 @@ if ( ${BUILD_EMBEDDED} )
 
 #        generate_arduino_library(jgLedCubeSerialEmbedded
 #                BOARD ${ARDUINO_DEFAULT_BOARD}
-#                SRCS  serial_arduino.cpp)
+#                SRCS  serial_arduino.desktop)
 
         add_subdirectory( arduino )
 
@@ -22,7 +22,7 @@ if ( ${BUILD_EMBEDDED} )
         STM32_SET_TARGET_PROPERTIES(jgLedCubeCore)
         STM32_ADD_HEX_BIN_TARGETS(jgLedCubeCore)
 
-        #    add_library(jgLedCubeSerial serial.cpp serial_stm32.cpp)
+        #    add_library(jgLedCubeSerial serial.desktop serial_stm32.desktop)
         #    STM32_SET_TARGET_PROPERTIES(jgLedCubeSerialEmbedded)
         #    STM32_ADD_HEX_BIN_TARGETS(jgLedCubeSerialEmbedded)
 

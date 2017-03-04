@@ -1,17 +1,14 @@
 language: cpp
 compiler:
  - gcc
- - clang
 
 os: linux
-dist: trusty
+dist: xenial
 sudo: required
 
 env:
-  - TRAVIS_BUILD_TYPE=TESTS
-  - TRAVIS_BUILD_TYPE=ARDUINO_DEBUG
+  - TARGET_PLATFORM=desktop
+  - TARGET_PLATFORM=arduino
 
 script:
- - pwd
- - ls -la
  - ./scripts/travis.sh

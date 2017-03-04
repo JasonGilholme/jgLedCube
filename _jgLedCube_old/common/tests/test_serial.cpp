@@ -3,6 +3,7 @@
 #include <jgLedCube/common/defines.h>
 #include <jgLedCube/common/serial.h>
 
+
 TEST(Serial, EncodeSetLed) {
     // Encode the command
     uint8_t encodedCommand[LED_CUBE_COMMAND_PACKET_SIZE] = {};
@@ -205,43 +206,42 @@ TEST(Serial, TransportCodec){
     EXPECT_EQ(outTransportCommand[7], jgLedCube::serial::transportEB);
 }
 
-// todo: only run when mock serial io ports have been defined.
-//TEST(Serial, SendReceive) {
-//    jgLedCube::serial::init();
-//
-//    // init buffers
-//    uint8_t outCommand[LED_CUBE_COMMAND_PACKET_SIZE];
-//    uint8_t outTransport[LED_CUBE_TRANSPORT_PACKET_SIZE];
-//    uint8_t inCommand[LED_CUBE_COMMAND_PACKET_SIZE];
-//    uint8_t inTransport[LED_CUBE_TRANSPORT_PACKET_SIZE];
-//
-//    // encode command & transport packets
-//    jgLedCube::serial::encode_setLed(outCommand, 5, 5, 8, 12, 13, 5);
-//    jgLedCube::serial::constructTransportPacket(outTransport, outCommand);
-//
-//    // send it
-//    jgLedCube::serial::sendTransportPacket(outTransport);
-//
-//    // receive it
-//    bool receivedPacket = jgLedCube::serial::receiveTransportPacket(inTransport);
-//
-//    // received pack?
-//    EXPECT_EQ(receivedPacket, true);
-//
-//    // successful transport?
-//    for (int i = 0; i < LED_CUBE_TRANSPORT_PACKET_SIZE; ++i) {
-//        EXPECT_EQ(inTransport[i], outTransport[i]);
-//    }
-//
-//    uint8_t outArgs[6];
-//
-//    jgLedCube::serial::deconstructTransportPacket(inTransport, inCommand);
-//    jgLedCube::serial::decode_setLed(inCommand, outArgs);
-//
-//    EXPECT_EQ(outArgs[0], 5);
-//    EXPECT_EQ(outArgs[1], 5);
-//    EXPECT_EQ(outArgs[2], 8);
-//    EXPECT_EQ(outArgs[3], 12);
-//    EXPECT_EQ(outArgs[4], 13);
-//    EXPECT_EQ(outArgs[5], 5);
-//}
+TEST(Serial, SendReceive) {
+    jgLedCube::serial::init();
+
+    // init buffers
+    uint8_t outCommand[LED_CUBE_COMMAND_PACKET_SIZE];
+    uint8_t outTransport[LED_CUBE_TRANSPORT_PACKET_SIZE];
+    uint8_t inCommand[LED_CUBE_COMMAND_PACKET_SIZE];
+    uint8_t inTransport[LED_CUBE_TRANSPORT_PACKET_SIZE];
+
+    // encode command & transport packets
+    jgLedCube::serial::encode_setLed(outCommand, 5, 5, 8, 12, 13, 5);
+    jgLedCube::serial::constructTransportPacket(outTransport, outCommand);
+
+    // send it
+    jgLedCube::serial::sendTransportPacket(outTransport);
+
+    // receive it
+    bool receivedPacket = jgLedCube::serial::receiveTransportPacket(inTransport);
+
+    // received pack?
+    EXPECT_EQ(receivedPacket, true);
+
+    // successful transport?
+    for (int i = 0; i < LED_CUBE_TRANSPORT_PACKET_SIZE; ++i) {
+        EXPECT_EQ(inTransport[i], outTransport[i]);
+    }
+
+    uint8_t outArgs[6];
+
+    jgLedCube::serial::deconstructTransportPacket(inTransport, inCommand);
+    jgLedCube::serial::decode_setLed(inCommand, outArgs);
+
+    EXPECT_EQ(outArgs[0], 5);
+    EXPECT_EQ(outArgs[1], 5);
+    EXPECT_EQ(outArgs[2], 8);
+    EXPECT_EQ(outArgs[3], 12);
+    EXPECT_EQ(outArgs[4], 13);
+    EXPECT_EQ(outArgs[5], 5);
+}
