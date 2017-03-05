@@ -1,6 +1,3 @@
-# Set some global properties to gather all the test sources and libs for.
-define_property(GLOBAL PROPERTY TEST_SOURCES BRIEF_DOCS "Global list of test sources" FULL_DOCS "Global list of test sources")
-define_property(GLOBAL PROPERTY TEST_LIBS BRIEF_DOCS "Global list of test libs" FULL_DOCS "Global list of test libs")
 
 add_subdirectory(common)
 
@@ -9,18 +6,6 @@ add_subdirectory(common)
 #
 if (${CUBE_TARGET_PLATFORM} STREQUAL desktop)
     add_subdirectory(controllers/ledCubeTray)
-
-
-    find_package(GTest REQUIRED)
-    include_directories(${GTEST_INCLUDE_DIR})
-
-    get_property(_TEST_SOURCES GLOBAL PROPERTY TEST_SOURCES)
-    get_property(_TEST_LIBS GLOBAL PROPERTY TEST_LIBS)
-
-    add_executable( gtests test.cpp ${_TEST_SOURCES} )
-    target_link_libraries( gtests ${_TEST_LIBS} ${GTEST_LIBRARY} pthread )
-    install( TARGETS gtests DESTINATION bin )
-
 elseif (${CUBE_TARGET_PLATFORM} STREQUAL android)
 elseif (${CUBE_TARGET_PLATFORM} STREQUAL arduino)
 elseif (${CUBE_TARGET_PLATFORM} STREQUAL stm)

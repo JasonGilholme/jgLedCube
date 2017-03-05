@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
+set(CMAKE_CXX_STANDARD 11)
 
 #
 # Setup the toolchain for the project
@@ -6,7 +7,5 @@ cmake_minimum_required(VERSION 3.0)
 include(cmake/toolchain.cmake)
 
 project(jgLedCube)
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include(cmake/dependencies.cmake)
 add_subdirectory(jgLedCube)
-
