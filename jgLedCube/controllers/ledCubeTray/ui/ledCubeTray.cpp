@@ -3,26 +3,33 @@
 //
 
 #include "ledCubeTray.h"
-#include "jgLedCube/controllers/ledCubeTray/ui/ledCubeTrayUi.h"
 
-#include <QTextStream>
-#include <QCoreApplication>
+// ui files
+#include "jgLedCube/controllers/ledCubeTray/ui/ledCubeTrayUi.h"
+#include "jgLedCube/controllers/ledCubeTray/ui/systemMonitorUi.h"
+
 #include <QtSerialPort/QSerialPortInfo>
 
 
 LedCubeTray::LedCubeTray(QWidget *parent) :
-    QWidget(parent), ui(new Ui::Form)
+    QWidget(parent), ui(new Ui::ledCubeTrayUi)
 {
     ui->setupUi(this);
     this->setupInterface();
+
+    sysMonUi = new Ui::systemMonitorUi();
+    sysMonUi->setupUi(ui->frmContent);
 }
 
 LedCubeTray::~LedCubeTray()
 {
     delete ui;
+    delete sysMonUi;
 }
 
 void LedCubeTray::setupInterface() {
+
+
 //    initialize the library by calling the function libusb_init and creating a session
 //    Call the function libusb_get_device_list to get a list of connected devices. This creates an array of libusb_device containing all usb devices connected to the system.
 //            Loop through all these devices and check their options
@@ -88,8 +95,7 @@ void LedCubeTray::setupInterface() {
     }
 
 
-    QStringList items({"asdf","zxvc"});
-    ui->cmbDevice->addItems(items);
+//    ui->cmbDevice->addItems(items);
 //
 //    libusb_exit(NULL);
 }

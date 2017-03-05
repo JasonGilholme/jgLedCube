@@ -13,175 +13,249 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_ledCubeTrayUi
 {
 public:
     QVBoxLayout *verticalLayout;
     QFrame *frame_5;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *lblImage;
+    QFrame *frame;
+    QVBoxLayout *verticalLayout_3;
+    QFrame *frame_2;
+    QHBoxLayout *horizontalLayout;
+    QLabel *lblCubeName;
+    QLabel *lblCubePort;
+    QFrame *frame_4;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label_6;
-    QPushButton *btnClose;
-    QFrame *line;
-    QGroupBox *groupBox;
-    QVBoxLayout *verticalLayout_2;
-    QComboBox *cmbDevice;
+    QLabel *lblCubeDescription;
+    QLabel *lblCubeVersion;
     QLabel *label_2;
     QFrame *line_2;
-    QGroupBox *groupBox_2;
-    QHBoxLayout *horizontalLayout_2;
-    QRadioButton *optAnimation;
-    QRadioButton *optSystemMonitor;
-    QRadioButton *optInteractive;
-    QFrame *frame_3;
+    QFrame *frame_6;
+    QHBoxLayout *horizontalLayout_5;
+    QPushButton *btnPreviousScreen;
+    QLabel *lblScreenName;
+    QPushButton *btnNextScreen;
+    QFrame *line;
+    QFrame *frmContent;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *ledCubeTrayUi)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QStringLiteral("Form"));
-        Form->resize(315, 303);
-        verticalLayout = new QVBoxLayout(Form);
+        if (ledCubeTrayUi->objectName().isEmpty())
+            ledCubeTrayUi->setObjectName(QStringLiteral("ledCubeTrayUi"));
+        ledCubeTrayUi->resize(303, 300);
+        verticalLayout = new QVBoxLayout(ledCubeTrayUi);
         verticalLayout->setSpacing(4);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(2, 2, 2, 2);
-        frame_5 = new QFrame(Form);
+        verticalLayout->setContentsMargins(4, 4, 4, 4);
+        frame_5 = new QFrame(ledCubeTrayUi);
         frame_5->setObjectName(QStringLiteral("frame_5"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(frame_5->sizePolicy().hasHeightForWidth());
         frame_5->setSizePolicy(sizePolicy);
-        horizontalLayout_3 = new QHBoxLayout(frame_5);
-        horizontalLayout_3->setSpacing(0);
+        frame_5->setMinimumSize(QSize(0, 0));
+        horizontalLayout_4 = new QHBoxLayout(frame_5);
+        horizontalLayout_4->setSpacing(4);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(4, 4, 4, 0);
+        lblImage = new QLabel(frame_5);
+        lblImage->setObjectName(QStringLiteral("lblImage"));
+        lblImage->setMinimumSize(QSize(48, 48));
+        lblImage->setMaximumSize(QSize(48, 48));
+        lblImage->setFrameShape(QFrame::StyledPanel);
+        lblImage->setFrameShadow(QFrame::Plain);
+        lblImage->setLineWidth(1);
+        lblImage->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_4->addWidget(lblImage);
+
+        frame = new QFrame(frame_5);
+        frame->setObjectName(QStringLiteral("frame"));
+        verticalLayout_3 = new QVBoxLayout(frame);
+        verticalLayout_3->setSpacing(2);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        frame_2 = new QFrame(frame);
+        frame_2->setObjectName(QStringLiteral("frame_2"));
+        horizontalLayout = new QHBoxLayout(frame_2);
+        horizontalLayout->setSpacing(1);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(2, 2, 2, 2);
+        lblCubeName = new QLabel(frame_2);
+        lblCubeName->setObjectName(QStringLiteral("lblCubeName"));
+        QFont font;
+        font.setPointSize(10);
+        font.setBold(false);
+        font.setWeight(50);
+        lblCubeName->setFont(font);
+        lblCubeName->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
+
+        horizontalLayout->addWidget(lblCubeName);
+
+        lblCubePort = new QLabel(frame_2);
+        lblCubePort->setObjectName(QStringLiteral("lblCubePort"));
+        QFont font1;
+        font1.setPointSize(8);
+        font1.setItalic(true);
+        lblCubePort->setFont(font1);
+        lblCubePort->setAlignment(Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing);
+
+        horizontalLayout->addWidget(lblCubePort);
+
+
+        verticalLayout_3->addWidget(frame_2);
+
+        frame_4 = new QFrame(frame);
+        frame_4->setObjectName(QStringLiteral("frame_4"));
+        horizontalLayout_3 = new QHBoxLayout(frame_4);
+        horizontalLayout_3->setSpacing(1);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_6 = new QLabel(frame_5);
-        label_6->setObjectName(QStringLiteral("label_6"));
+        lblCubeDescription = new QLabel(frame_4);
+        lblCubeDescription->setObjectName(QStringLiteral("lblCubeDescription"));
+        QFont font2;
+        font2.setPointSize(9);
+        lblCubeDescription->setFont(font2);
+        lblCubeDescription->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
-        horizontalLayout_3->addWidget(label_6);
+        horizontalLayout_3->addWidget(lblCubeDescription);
 
-        btnClose = new QPushButton(frame_5);
-        btnClose->setObjectName(QStringLiteral("btnClose"));
-        btnClose->setMinimumSize(QSize(25, 25));
-        btnClose->setMaximumSize(QSize(25, 25));
+        lblCubeVersion = new QLabel(frame_4);
+        lblCubeVersion->setObjectName(QStringLiteral("lblCubeVersion"));
+        lblCubeVersion->setFont(font1);
+        lblCubeVersion->setAlignment(Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing);
 
-        horizontalLayout_3->addWidget(btnClose);
+        horizontalLayout_3->addWidget(lblCubeVersion);
+
+
+        verticalLayout_3->addWidget(frame_4);
+
+
+        horizontalLayout_4->addWidget(frame);
+
+        label_2 = new QLabel(frame_5);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
+        label_2->setSizePolicy(sizePolicy1);
+        QFont font3;
+        font3.setPointSize(10);
+        font3.setBold(true);
+        font3.setWeight(75);
+        label_2->setFont(font3);
+        label_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        horizontalLayout_4->addWidget(label_2);
 
 
         verticalLayout->addWidget(frame_5);
 
-        line = new QFrame(Form);
-        line->setObjectName(QStringLiteral("line"));
-        line->setFrameShape(QFrame::HLine);
-        line->setFrameShadow(QFrame::Sunken);
-
-        verticalLayout->addWidget(line);
-
-        groupBox = new QGroupBox(Form);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-        groupBox->setSizePolicy(sizePolicy);
-        groupBox->setMinimumSize(QSize(0, 0));
-        verticalLayout_2 = new QVBoxLayout(groupBox);
-        verticalLayout_2->setSpacing(2);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(2, 2, 2, 2);
-        cmbDevice = new QComboBox(groupBox);
-        cmbDevice->setObjectName(QStringLiteral("cmbDevice"));
-
-        verticalLayout_2->addWidget(cmbDevice);
-
-        label_2 = new QLabel(groupBox);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
-        label_2->setSizePolicy(sizePolicy);
-        label_2->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_2->addWidget(label_2);
-
-
-        verticalLayout->addWidget(groupBox);
-
-        line_2 = new QFrame(Form);
+        line_2 = new QFrame(ledCubeTrayUi);
         line_2->setObjectName(QStringLiteral("line_2"));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
 
         verticalLayout->addWidget(line_2);
 
-        groupBox_2 = new QGroupBox(Form);
-        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        horizontalLayout_2 = new QHBoxLayout(groupBox_2);
-        horizontalLayout_2->setSpacing(2);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(2, 2, 2, 2);
-        optAnimation = new QRadioButton(groupBox_2);
-        optAnimation->setObjectName(QStringLiteral("optAnimation"));
+        frame_6 = new QFrame(ledCubeTrayUi);
+        frame_6->setObjectName(QStringLiteral("frame_6"));
+        frame_6->setMinimumSize(QSize(0, 25));
+        frame_6->setMaximumSize(QSize(16777215, 25));
+        horizontalLayout_5 = new QHBoxLayout(frame_6);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
+        btnPreviousScreen = new QPushButton(frame_6);
+        btnPreviousScreen->setObjectName(QStringLiteral("btnPreviousScreen"));
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(btnPreviousScreen->sizePolicy().hasHeightForWidth());
+        btnPreviousScreen->setSizePolicy(sizePolicy2);
+        btnPreviousScreen->setMinimumSize(QSize(20, 0));
+        btnPreviousScreen->setMaximumSize(QSize(20, 16777215));
 
-        horizontalLayout_2->addWidget(optAnimation);
+        horizontalLayout_5->addWidget(btnPreviousScreen);
 
-        optSystemMonitor = new QRadioButton(groupBox_2);
-        optSystemMonitor->setObjectName(QStringLiteral("optSystemMonitor"));
+        lblScreenName = new QLabel(frame_6);
+        lblScreenName->setObjectName(QStringLiteral("lblScreenName"));
+        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(lblScreenName->sizePolicy().hasHeightForWidth());
+        lblScreenName->setSizePolicy(sizePolicy3);
+        QFont font4;
+        font4.setPointSize(10);
+        lblScreenName->setFont(font4);
+        lblScreenName->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout_2->addWidget(optSystemMonitor);
+        horizontalLayout_5->addWidget(lblScreenName);
 
-        optInteractive = new QRadioButton(groupBox_2);
-        optInteractive->setObjectName(QStringLiteral("optInteractive"));
+        btnNextScreen = new QPushButton(frame_6);
+        btnNextScreen->setObjectName(QStringLiteral("btnNextScreen"));
+        btnNextScreen->setMinimumSize(QSize(20, 0));
+        btnNextScreen->setMaximumSize(QSize(20, 16777215));
 
-        horizontalLayout_2->addWidget(optInteractive);
-
-
-        verticalLayout->addWidget(groupBox_2);
-
-        frame_3 = new QFrame(Form);
-        frame_3->setObjectName(QStringLiteral("frame_3"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(frame_3->sizePolicy().hasHeightForWidth());
-        frame_3->setSizePolicy(sizePolicy1);
-
-        verticalLayout->addWidget(frame_3);
+        horizontalLayout_5->addWidget(btnNextScreen);
 
 
-        retranslateUi(Form);
+        verticalLayout->addWidget(frame_6);
 
-        QMetaObject::connectSlotsByName(Form);
+        line = new QFrame(ledCubeTrayUi);
+        line->setObjectName(QStringLiteral("line"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout->addWidget(line);
+
+        frmContent = new QFrame(ledCubeTrayUi);
+        frmContent->setObjectName(QStringLiteral("frmContent"));
+        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(frmContent->sizePolicy().hasHeightForWidth());
+        frmContent->setSizePolicy(sizePolicy4);
+
+        verticalLayout->addWidget(frmContent);
+
+
+        retranslateUi(ledCubeTrayUi);
+
+        QMetaObject::connectSlotsByName(ledCubeTrayUi);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *ledCubeTrayUi)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", Q_NULLPTR));
-        label_6->setText(QApplication::translate("Form", "Led Cube Controller", Q_NULLPTR));
-        btnClose->setText(QApplication::translate("Form", "X", Q_NULLPTR));
-        groupBox->setTitle(QApplication::translate("Form", "Device", Q_NULLPTR));
-        cmbDevice->clear();
-        cmbDevice->insertItems(0, QStringList()
-         << QApplication::translate("Form", "CubeName on /dev/ttyUSB0", Q_NULLPTR)
-        );
-        label_2->setText(QApplication::translate("Form", "4x4x4 RGB  v0.1.15 ", Q_NULLPTR));
-        groupBox_2->setTitle(QApplication::translate("Form", "Mode", Q_NULLPTR));
-        optAnimation->setText(QApplication::translate("Form", "Animation", Q_NULLPTR));
-        optSystemMonitor->setText(QApplication::translate("Form", "System Monitor", Q_NULLPTR));
-        optInteractive->setText(QApplication::translate("Form", "Interactive", Q_NULLPTR));
+        ledCubeTrayUi->setWindowTitle(QApplication::translate("ledCubeTrayUi", "Form", Q_NULLPTR));
+        lblImage->setText(QString());
+        lblCubeName->setText(QApplication::translate("ledCubeTrayUi", "CubeName", Q_NULLPTR));
+        lblCubePort->setText(QApplication::translate("ledCubeTrayUi", "/dev/ttyUSB0", Q_NULLPTR));
+        lblCubeDescription->setText(QApplication::translate("ledCubeTrayUi", "4x4x4 RGB", Q_NULLPTR));
+        lblCubeVersion->setText(QApplication::translate("ledCubeTrayUi", "v0.1.15", Q_NULLPTR));
+        label_2->setText(QApplication::translate("ledCubeTrayUi", "^", Q_NULLPTR));
+        btnPreviousScreen->setText(QApplication::translate("ledCubeTrayUi", "<", Q_NULLPTR));
+        lblScreenName->setText(QApplication::translate("ledCubeTrayUi", "System Monitor", Q_NULLPTR));
+        btnNextScreen->setText(QApplication::translate("ledCubeTrayUi", ">", Q_NULLPTR));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class ledCubeTrayUi: public Ui_ledCubeTrayUi {};
 } // namespace Ui
 
 QT_END_NAMESPACE

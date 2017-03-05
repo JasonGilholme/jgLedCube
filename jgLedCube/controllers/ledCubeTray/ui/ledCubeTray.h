@@ -8,7 +8,8 @@
 #include <QtWidgets>
 
 namespace Ui {
-    class Form;
+    class ledCubeTrayUi;
+    class systemMonitorUi;
 }
 
 class LedCubeTray : public QWidget
@@ -20,7 +21,8 @@ public:
     virtual ~LedCubeTray();
 
 private:
-    Ui::Form *ui;
+    Ui::ledCubeTrayUi *ui;
+    Ui::systemMonitorUi *sysMonUi;
 
     void setupInterface();
 };
