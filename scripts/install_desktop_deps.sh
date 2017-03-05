@@ -22,7 +22,7 @@ sudo mv libg* /usr/local/lib/
 sudo apt-get install -y qt5-default qt5-qmake
 sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
 sudo apt-get update -qq
-sudo apt-get install -qq qt5-qmake qtbase5-dev qtdeclarative5-dev qtserialport5-dev
+sudo apt-get install -qq qt5-qmake qtbase5-dev qtdeclarative5-dev qtserialport5-dbg
 
 # Socat - serial port virtualisation for testing
 sudo apt-get install socat
