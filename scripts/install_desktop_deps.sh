@@ -18,6 +18,12 @@ sudo cmake .
 sudo cmake --build .
 sudo mv libg* /usr/local/lib/
 
+# Qt5
+sudo apt-get install -y qt5-default qt5-qmake
+sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+sudo apt-get update -qq
+sudo apt-get install -qq qt5-qmake qtbase5-dev qtdeclarative5-dev qtserialport5-dev
+
 # Socat - serial port virtualisation for testing
 sudo apt-get install socat
 
