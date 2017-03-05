@@ -14,6 +14,6 @@ if (${CUBE_TARGET_PLATFORM} STREQUAL desktop)
     # find & setup Qt
     #
     set(CMAKE_AUTOMOC ON)
-    find_package(Qt5 5.8 REQUIRED COMPONENTS Widgets SerialPort REQUIRED)
+    find_package(Qt5 5.2 REQUIRED COMPONENTS Widgets SerialPort REQUIRED)
 
 endif()
