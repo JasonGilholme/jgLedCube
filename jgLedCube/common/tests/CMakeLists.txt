@@ -5,5 +5,5 @@ set_property(GLOBAL APPEND PROPERTY
 
 set_property(GLOBAL APPEND PROPERTY
         TEST_LIBS
-        jgLedCubeSerial
+        common_serial
         )

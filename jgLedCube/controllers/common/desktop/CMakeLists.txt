@@ -1,0 +1,1 @@
+add_library(controllers_common_desktop cube.cpp serial.cpp)

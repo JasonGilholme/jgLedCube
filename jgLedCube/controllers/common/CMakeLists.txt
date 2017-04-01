@@ -1,0 +1,5 @@
+if (${CUBE_TARGET_PLATFORM} STREQUAL desktop)
+    add_subdirectory(desktop)
+else ()
+    add_subdirectory(embedded)
+endif()

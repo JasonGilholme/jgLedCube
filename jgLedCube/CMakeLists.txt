@@ -1,12 +1,11 @@
-
 add_subdirectory(common)
+add_subdirectory(controllers)
 
-#
-# Include platform compatible directories
-#
 if (${CUBE_TARGET_PLATFORM} STREQUAL desktop)
-    add_subdirectory(controllers/ledCubeTray)
-elseif (${CUBE_TARGET_PLATFORM} STREQUAL android)
-elseif (${CUBE_TARGET_PLATFORM} STREQUAL arduino)
-elseif (${CUBE_TARGET_PLATFORM} STREQUAL stm)
+    get_property(TEST_SOURCES GLOBAL PROPERTY TEST_SOURCES)
+    get_property(TEST_LIBS GLOBAL PROPERTY TEST_LIBS)
+    add_executable(desktop_tests test.cpp ${TEST_SOURCES})
+    target_link_libraries(desktop_tests -pthread ${GTEST_LIBRARY} ${TEST_LIBS})
+else()
+    add_subdirectory(cubes)
 endif()
