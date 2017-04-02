@@ -1,21 +1,15 @@
 //
-// Created by jase on 1/04/17.
+// Serial interaction for desktop
 //
 
 #ifndef JGLEDCUBE_SERIAL_H
 #define JGLEDCUBE_SERIAL_H
 
-#include <vector>
-#include <string>
+#include "jgLedCube/controllers/common/desktop/typedefs.h"
 
 namespace jgLedCube {
-
-    std::vector<std::string> listSerialPorts();
-
-    bool isCubeOnSerialPort(std::string serialPort);
-
-
-
+    serialPortList listSerialPorts();
+    bool isCubeOnSerialPort(serialPort serialPort);
 }
 
 #endif //JGLEDCUBE_SERIAL_H

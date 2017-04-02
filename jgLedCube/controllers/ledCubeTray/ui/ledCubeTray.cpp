@@ -9,7 +9,9 @@
 #include "jgLedCube/controllers/ledCubeTray/ui/systemMonitorUi.h"
 
 #include <QtSerialPort/QSerialPortInfo>
+#include <iostream>
 
+#include "jgLedCube/controllers/common/desktop/cubes.h"
 
 LedCubeTray::LedCubeTray(QWidget *parent) :
     QWidget(parent), ui(new Ui::ledCubeTrayUi)
@@ -28,6 +30,28 @@ LedCubeTray::~LedCubeTray()
 }
 
 void LedCubeTray::setupInterface() {
+//     cubes = jgLedCube::CubeFactory::findCubes();
+
+    jgLedCube::CubeFactory::cubePtrList cubes = jgLedCube::CubeFactory::findCubes();
+
+//    for (int i = 0; i < .size(); ++i) {
+//        std::cout << cubes[i]->serialPort << std::endl;
+//    }
+
+//    for (int i = 0; i < cubes.size(); ++i) {
+//        std::cout << cubes[i]->serialPort << std::endl;
+//    }
+
+//    jgLedCube::CubeFactory::TestMap.insert(std::make_pair<std::string, std::string>("asdf", "asdf"));
+//    jgLedCube::cubeList cubes = jgLedCube::findCubes();
+//
+//    std::cout << cubes.size() << std::endl;
+
+
+//
+//    for (auto &&cube : cubes) {
+//        std::cout << cube.portName << std::endl;
+//    }
 
 
 //    initialize the library by calling the function libusb_init and creating a session

@@ -2,4 +2,4 @@
 # Add the ledCubeTray App
 #
 add_executable(ledCubeTray main.cpp ui/ledCubeTray.cpp)
-target_link_libraries(ledCubeTray Qt5::Widgets Qt5::SerialPort)
+target_link_libraries(ledCubeTray Qt5::Widgets Qt5::SerialPort controllers_common_desktop)
