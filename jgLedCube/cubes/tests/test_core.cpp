@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
-#include <jgLedCube/embedded/core.h>
-#include <jgLedCube/embedded/defines.h>
+#include <jgLedCube/cubes/core.h>
+#include <jgLedCube/cubes/defines.h>
 
 TEST(Core, SetBit) {
     uint8_t b = 0;

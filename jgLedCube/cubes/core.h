@@ -3,7 +3,7 @@
 #ifndef JGLEDCUBE_EMBEDDED_CORE_H
 #define JGLEDCUBE_EMBEDDED_CORE_H
 
-#include <jgLedCube/embedded/defines.h>
+#include <jgLedCube/cubes/defines.h>
 //#include <jgLedCube/embedded/hardware.h>
 
 #include <stdint.h>

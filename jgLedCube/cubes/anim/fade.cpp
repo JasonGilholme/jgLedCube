@@ -1,7 +1,7 @@
 
 #include "fade.h"
 
-#include <jgLedCube/embedded/core.h>
+#include <jgLedCube/cubes/core.h>
 
 #include <stdint.h>
 

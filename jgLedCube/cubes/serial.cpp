@@ -1,8 +1,8 @@
 /// This is the logic implementation for the serial interface.  This should be completely hardware independent.
 
 #include <jgLedCube/common/serial.h>
-#include <jgLedCube/embedded/serial.h>
-#include <jgLedCube/embedded/core.h>
+#include <jgLedCube/cubes/serial.h>
+#include <jgLedCube/cubes/core.h>
 
 
 // CommandPatternLength = LED_CUBE_COMMAND_PACKET_SIZE
