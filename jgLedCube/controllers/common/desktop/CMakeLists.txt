@@ -1,1 +1,1 @@
-add_library(controllers_common_desktop cubes.cpp serial.cpp typedefs.h)
+add_library(controllers_common_desktop cubes.cpp serial.cpp)
